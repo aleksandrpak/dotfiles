@@ -42,17 +42,3 @@ else
     echo "Creating symlink for $MUTT_SOURCE"
     echo ln -s $MUTT_SOURCE $MUTT_TARGET
 fi
-
-echo "\nCreating nvim to vim symlinks"
-echo "=============================="
-
-typeset -A vimfiles=(~/.vim $DOTFILES/config/nvim ~/.vimrc $DOTFILES/config/nvim/init.vim)
-
-for file in "${(@k)vimfiles}"; do
-    if [ -e ${file} ]; then
-        echo "${file} already exists... skipping"
-    else
-        echo "Creating symlink for $file"
-        ln -s $vimfiles[$file] $file
-    fi
-done
