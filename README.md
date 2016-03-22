@@ -22,7 +22,7 @@ Then, clone the dotfiles repository to your computer. This can be placed anywher
 ```bash
 git clone https://github.com/aleksandrpak/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-./install.sh
+sh install.sh
 ```
 
 `install.sh` will start by initializing the submodules used by this repository. Then, it will install all symbolic links into your home directory. Every file with a `.symlink` extension will be symlinked to the home directory with a `.` in front of it. As an example, `zshrc.symlink` will be symlinked in the home directory as `~/.zshrc`. Then, this script will create a `~/.vim-tmp` directory in your home directory, as this is where vim is configured to place its temporary files. Additionally, all files in the `$DOTFILES/config` directory will be symlinked to the `~/.config/` directory for applications that follow the [XDG base directory specification](http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html), such as neovim.
