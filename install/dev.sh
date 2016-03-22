@@ -57,3 +57,5 @@ cd ~/.config/nvim/plugged/YouCompleteMe
 ssh-keygen -t rsa -b 4096 -C "alekspak@icloud.com" -P "" -f ~/.ssh/id_rsa
 ssh-add ~/.ssh/id_rsa
 pbcopy < ~/.ssh/id_rsa.pub
+
+exit 0
