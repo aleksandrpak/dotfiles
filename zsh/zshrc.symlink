@@ -1,6 +1,27 @@
 export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
 
+# Use openssl from brew
+export OPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include 
+export DEP_OPENSSL_INCLUDE=/usr/local/opt/openssl/include
+
+# Golang variables
+export GOPATH=$HOME/Projects/gocode
+export PATH=$PATH:$GOPATH/bin
+
+# Java & Scala variables
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
+export SCALA_HOME=/usr/local/opt/scala
+export SBT_OPTS="-Xms40M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M -Djavax.net.ssl.trustStore=cacerts -Djavax.net.ssl.trustStorePassword=changeit"
+export PATH=$PATH:$SCALA_HOME/bin
+
+# Rust variables
+export RUST_SRC_PATH=~/Projects/github.com/rust-lang/rust/src
+export PATH=$PATH:/Users/Aleksandr/.cargo/bin
+
+# Mendix variables
+export MXBUILD_PATH=~/Mendix/bin
+
 # display how long all tasks over 10 seconds take
 export REPORTTIME=10
 
@@ -60,3 +81,6 @@ fi
 BASE16_SHELL="$DOTFILES/.config/base16-shell/$THEME.$BACKGROUND.sh"
 source $BASE16_SHELL
 
+# Source cli helpers
+eval "$(thefuck --alias)"
+eval "$(fasd --init auto)"

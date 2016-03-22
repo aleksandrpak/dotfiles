@@ -2,6 +2,13 @@
 
 # Instaling Rust
 curl -sf -L https://static.rust-lang.org/rustup.sh | sh
+mkdir -p ~/Projects/github.com/rust-lang
+cd ~/Projects/github.com/rust-lang
+git clone https://github.com/rust-lang/rust.git
+cargo install rustfmt
+
+# Creating Mendix environment
+mkdir -p ~/Mendix/bin
 
 # Installing Go
 brew install go
@@ -20,6 +27,7 @@ pip install --upgrade pip
 pip install future
 pip install six
 pip install websocket-client
+pip install grip
 
 # Installing nvim bundles
 pip install neovim --upgrade

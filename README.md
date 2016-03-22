@@ -61,7 +61,7 @@ Some of the procedures are still required automation:
 * System Preferences -> General -> Enable 'Use dark menu bar and Dock'
 * System Preferences -> Notifications -> Do Not Disturb -> From 05:00 to 04:59
 * Finder -> Preferences -> New Finder Window show: Downloads
-* install Taurine from AppStore
-* install Pocket from AppStore
+* Install Taurine from AppStore
+* Install Pocket from AppStore
 * Configure dock: Finder | iTerm | Chrome | iMessage | Calendar
 * Launch iTerm: iTerm top menu -> Make iTerm2 default Term

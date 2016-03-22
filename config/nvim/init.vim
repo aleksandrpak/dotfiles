@@ -6,19 +6,22 @@ Plug 'chriskempson/base16-vim'
 " utilities
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy file finder, mapped to <leader>t
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
+Plug 'airblade/vim-rooter' " changing root folder to version control root
 Plug 'rking/ag.vim' " search inside files using ag. Same as command line ag utility
 Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'tpope/vim-commentary' " comment stuff out
 Plug 'tpope/vim-unimpaired' " mappings which are simply short normal mode aliases for commonly used ex commands
 Plug 'tpope/vim-ragtag' " endings for html, xml, etc. - ehances surround
-Plug 'tpope/vim-surround' " mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
+Plug 'machakann/vim-sandwich' " mappings to easily delete, change and add such surroundings in pairs, such as quotes, parens, etc.
 Plug 'benmills/vimux' " tmux integration for vim
 Plug 'vim-airline/vim-airline' " fancy statusline
 Plug 'vim-airline/vim-airline-themes' " themes for vim-airline
 Plug 'benekastah/neomake' " neovim replacement for syntastic using neovim's job control functonality
 Plug 'tpope/vim-fugitive' " amazing git wrapper for vim
+Plug 'airblade/vim-gitgutter' " added/removed/modified lines for git
 Plug 'tpope/vim-repeat' " enables repeating other supported plugins with the . command
-Plug 'garbas/vim-snipmate' " snippet manager
+Plug 'SirVer/ultisnips' " snippet manager
+Plug 'honza/vim-snippets' " collection of snippets
 Plug 'editorconfig/editorconfig-vim' " .editorconfig support
 Plug 'MarcWeber/vim-addon-mw-utils' " interpret a file by function and cache file automatically
 Plug 'tomtom/tlib_vim' " utility functions for vim
@@ -28,17 +31,28 @@ Plug 'tpope/vim-dispatch' " asynchronous build and test dispatcher
 Plug 'AndrewRadev/splitjoin.vim' " single/multi line code handler: gS - split one line into multiple, gJ - combine multiple lines into one
 Plug 'vim-scripts/matchit.zip' " extended % matching
 Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
+Plug 'nathanaelkane/vim-indent-guides' " Helps to visualize indent levels
 Plug 'sickill/vim-pasta' " context-aware pasting
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free writing
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for presentating with vim
-Plug 'OmniSharp/omnisharp-vim' " Refactoring tools for C#
-Plug 'Valloric/YouCompleteMe' " Auto complete for multiple languages
 
 " language-specific plugins
+Plug 'Chiel92/vim-autoformat' " Auto format files
+Plug 'ensime/ensime-vim' " refactoring tools for Scala
+Plug 'OmniSharp/omnisharp-vim' " refactoring tools for C#
+Plug 'Valloric/YouCompleteMe' " auto complete for multiple languages
 Plug 'elzr/vim-json', { 'for': 'json' } " JSON support
 Plug 'Shougo/vimproc.vim', { 'do': 'make' } " interactive command execution in vim
+Plug 'JamshedVesuna/vim-markdown-preview' " Preview markdown in browser
 Plug 'tpope/vim-markdown', { 'for': 'markdown' } " markdown support
+Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] } " markdown support
 Plug 'fatih/vim-go', { 'for': 'go' } " go support
+
+" Haskell plugins
+Plug 'dag/vim2hs' " collection of scripts
+Plug 'eagletmt/neco-ghc' " auto-complete
+Plug 'eagletmt/ghcmod-vim' " ghc-mod to vim
+Plug 'enomsg/vim-haskellConcealPlus' " concealing
 
 call plug#end()
 
@@ -82,6 +96,7 @@ set diffopt+=vertical
 " highlight conflicts
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
+
 " file type specific settings
 if has('autocmd') && !exists('autocommands_loaded')
     let autocommands_loaded = 1
@@ -123,6 +138,13 @@ set foldlevel=1
 " => User Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Cursor shape in different modes
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+set cpo+=$ " adding $ to the end of change
+
 set so=7 " set 7 lines to the cursors - when moving vertical
 set wildmenu " enhanced command line completion
 set hidden " current buffer can be put into background
@@ -132,6 +154,15 @@ set wildmode=list:longest " complete files like a shell
 set scrolloff=3 " lines of text around cursor
 set shell=$SHELL
 set cmdheight=1 " command bar height
+
+" Ignoring in search
+set wildignore+=*/tmp/*,*.so
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem              " Disable output and VCS files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz                          " Disable archive files
+set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*     " Ignore bundler and sass cache
+set wildignore+=*/tmp/librarian/*,*/.vagrant/*,*/.kitchen/*,*/vendor/cookbooks/* " Ignore librarian-chef, vagrant, test-kitchen and Berkshelf cache
+set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*     " Ignore rails temporary asset caches
+set wildignore+=*.swp,*~,._*                                                     " Disable temp and backup files
 
 set title " set terminal title
 
@@ -416,6 +447,45 @@ let NERDTreeShowHidden=1
 nmap <silent> <leader>k :NERDTreeToggle<cr>
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
+
+" rooter config
+let g:rooter_patterns = ['tags', '.git', '.git/']
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<C-l><C-l>"
+
+" These are the tweaks I apply to YCM's config, you don't need them but they might help.
+" YCM gives you popups and splits by default that some people might not like, so these should tidy it up a bit for you.
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
+
+" Golang
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+" Rust
+au BufNewFile,BufRead *.rs set filetype=rust
+au BufWrite *.rs :Autoformat
+let g:formatdef_rustfmt = '"rustfmt --write-mode=overwrite"'
+let g:formatters_rust = ['rustfmt']
+
+" Haskell
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+let g:haskell_conceal_wide = 1
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+
+" OmniSharp
+let g:OmniSharp_server_type = 'v1'
+let g:OmniSharp_server_type = 'roslyn'
+
+" Markdown Preview like Github
+let vim_markdown_preview_github=1
 
 " map fuzzyfinder (CtrlP) plugin
 nmap <silent> <leader>r :CtrlPBuffer<cr>
