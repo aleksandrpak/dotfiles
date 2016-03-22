@@ -7,20 +7,36 @@ fi
 
 echo "Installing homebrew packages..."
 
-# CLI and development
-brew install ack
+# Compiling and libraries
+brew install cmake
+brew install libconfig
+brew install libevent
+brew install readline
+brew install jansson
+brew install webp --with-giflib --with-libtiff
+
+# CLI
 brew install tree
+brew install the_silver_searcher
 brew install wget
 brew install thefuck
 brew install fasd
 brew install git
 brew install hub
-brew install tmux
 brew install zsh
+brew install tmux
+
+# Development
+brew install sqlite
 brew install macvim --override-system-vim
+brew install lua --with-completion
 brew install neovim/neovim/neovim
 
 # Mail
+brew install offlineimap
+brew install msmtp
+brew install notmuch
+brew install urlview
 brew tap kevwil/patches
 brew install kevwil/patches/mutt --with-sidebar-patch
 
@@ -28,11 +44,12 @@ brew install kevwil/patches/mutt --with-sidebar-patch
 brew install caskroom/cask/brew-cask
 brew cask install iterm2
 brew cask install google-chrome
-brew cask install google-drive
+brew cask install dropbox
 brew cask install alfred
 brew cask install amethyst
 brew cask install spotify
 brew cask install telegram
+brew cask install slack
 
 # Font setup
 brew cask install caskroom/fonts/font-hack

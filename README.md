@@ -48,3 +48,20 @@ ZSH is configured in the `zshrc.symlink` file, which will be symlinked to the ho
 I am currently using [Hack](http://sourcefoundry.org/hack/) as my default font, which does include Powerline support, so you don't need an additional patched font. In addition to this, I do have [nerd-fonts](https://github.com/ryanoasis/nerd-fonts) installed and configured to be used for non-ascii characters. If you would prefer not to do this, then simply remove the `Plug 'ryanoasis/vim-devicons'` plugin from vim/nvim. Then, I configure the fonts in this way in iTerm2:
 
 ![](iterm-fonts-config.png)
+
+## Things to automate in OSX
+
+Some of the procedures are still required automation:
+
+* System Preferences -> Keyboard -> Keyboard -> Use all F1, F2, etc. keys as standard function keys
+* System Preferences -> Keyboard -> Input Sources -> Add Russian
+* System Preferences -> Keyboard -> Shortcuts -> Input Sources: Command + Space
+* System Preferences -> Keyboard -> Shortcuts -> Mission Control: Disable F11, F12
+* System Preferences -> Desktop & Screen Saver -> Desktop -> Solid Colors -> Solid Gray Dark
+* System Preferences -> General -> Enable 'Use dark menu bar and Dock'
+* System Preferences -> Notifications -> Do Not Disturb -> From 05:00 to 04:59
+* Finder -> Preferences -> New Finder Window show: Downloads
+* install Taurine from AppStore
+* install Pocket from AppStore
+* Configure dock: Finder | iTerm | Chrome | iMessage | Calendar
+* Launch iTerm: iTerm top menu -> Make iTerm2 default Term

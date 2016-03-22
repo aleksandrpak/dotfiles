@@ -2,7 +2,7 @@
 
 DOTFILES=$HOME/.dotfiles
 
-echo -e "\nCreating symlinks"
+echo "\nCreating symlinks"
 echo "=============================="
 linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
 for file in $linkables ; do
@@ -15,7 +15,7 @@ for file in $linkables ; do
     fi
 done
 
-echo -e "\n\nInstalling to ~/.config"
+echo "\nInstalling to ~/.config"
 echo "=============================="
 if [ ! -d $HOME/.config ]; then
     echo "Creating ~/.config"
@@ -31,6 +31,17 @@ for config in $DOTFILES/config/*; do
         ln -s $config $target
     fi
 done
+
+echo "\nCreating symlink for mutt"
+echo "=============================="
+MUTT_SOURCE=$DOTFILES/mutt
+MUTT_TARGET=$HOME/.mutt
+if [ -e $MUTT_TARGET ]; then
+    echo "~${MUTT_TARGET#HOME} already exists... Skipping."
+else
+    echo "Creating symlink for $MUTT_SOURCE"
+    echo ln -s $MUTT_SOURCE $MUTT_TARGET
+fi
 
 echo "\nCreating nvim to vim symlinks"
 echo "=============================="

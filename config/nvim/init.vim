@@ -6,7 +6,7 @@ Plug 'chriskempson/base16-vim'
 " utilities
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy file finder, mapped to <leader>t
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
-Plug 'mileszs/ack.vim' " search inside files using ack. Same as command line ack utility, but use :Ack
+Plug 'rking/ag.vim' " search inside files using ag. Same as command line ag utility
 Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'tpope/vim-commentary' " comment stuff out
 Plug 'tpope/vim-unimpaired' " mappings which are simply short normal mode aliases for commonly used ex commands
@@ -31,6 +31,8 @@ Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'sickill/vim-pasta' " context-aware pasting
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free writing
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for presentating with vim
+Plug 'OmniSharp/omnisharp-vim' " Refactoring tools for C#
+Plug 'Valloric/YouCompleteMe' " Auto complete for multiple languages
 
 " language-specific plugins
 Plug 'elzr/vim-json', { 'for': 'json' } " JSON support
@@ -426,6 +428,11 @@ nmap <silent> <leader>gs :Gstatus<cr>
 nmap <leader>ge :Gedit<cr>
 nmap <silent><leader>gr :Gread<cr>
 nmap <silent><leader>gb :Gblame<cr>
+
+" Ag configs
+let g:ag_working_path_mode="r"
+nnoremap <leader>a :tab split<CR>:Ag ""<Left>
+nnoremap <leader>A :tab split<CR>:Ag <C-r><C-w><CR>
 
 nmap <leader>m :MarkedOpen!<cr>
 nmap <leader>mq :MarkedQuit<cr>

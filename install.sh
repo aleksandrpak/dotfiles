@@ -15,6 +15,12 @@ if [ "$(uname)" == "Darwin" ]; then
 
     echo "Updating OSX settings"
     source install/osx.sh
+
+    echo "Downloading development tools"
+    source install/dev.sh
+
+    echo "Installing mutt for mail"
+    source install/mutt.sh
 fi
 
 echo "creating vim directories"
