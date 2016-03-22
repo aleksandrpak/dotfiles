@@ -28,7 +28,7 @@ brew install tmux
 
 # Development
 brew install sqlite
-brew install macvim --override-system-vim
+brew install macvim --with-override-system-vim
 brew install lua --with-completion
 brew install neovim/neovim/neovim
 
