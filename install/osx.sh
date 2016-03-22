@@ -1,5 +1,8 @@
 #!/usr/bin/env sh
 
+echo "Saving screenshots to Google Drive"
+defaults write com.apple.screencapture location "$HOME/Google Drive/Screenshots"
+
 echo "Finder: show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
