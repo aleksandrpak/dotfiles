@@ -40,5 +40,5 @@ if [ -e $MUTT_TARGET ]; then
     echo "~${MUTT_TARGET#HOME} already exists... Skipping."
 else
     echo "Creating symlink for $MUTT_SOURCE"
-    echo ln -s $MUTT_SOURCE $MUTT_TARGET
+    ln -s $MUTT_SOURCE $MUTT_TARGET
 fi

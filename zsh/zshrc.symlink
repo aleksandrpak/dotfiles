@@ -84,3 +84,5 @@ source $BASE16_SHELL
 # Source cli helpers
 eval "$(thefuck --alias)"
 eval "$(fasd --init auto)"
+
+[ -s "$HOME/.dnx/dnvm/dnvm.sh" ] && . "$HOME/.dnx/dnvm/dnvm.sh" # Load dnvm

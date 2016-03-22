@@ -37,6 +37,7 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free writing
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for presentating with vim
 
 " language-specific plugins
+Plug 'sheerun/vim-polyglot' " collection of language specific plugins
 Plug 'Chiel92/vim-autoformat' " Auto format files
 Plug 'ensime/ensime-vim' " refactoring tools for Scala
 Plug 'OmniSharp/omnisharp-vim' " refactoring tools for C#
