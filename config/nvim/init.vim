@@ -497,12 +497,14 @@ let g:ctrlp_working_path_mode = 'ra'
 nmap <silent> <leader>gs :Gstatus<cr>
 nmap <leader>ge :Gedit<cr>
 nmap <silent><leader>gr :Gread<cr>
+nmap <silent><leader>gw :Gwrite<cr>
 nmap <silent><leader>gb :Gblame<cr>
+nmap <silent><leader>gt :Gcommit<cr>
 
 " Ag configs
 let g:ag_working_path_mode="r"
-nnoremap <leader>a :tab split<CR>:Ag ""<Left>
-nnoremap <leader>A :tab split<CR>:Ag <C-r><C-w><CR>
+nnoremap <leader>a :Ag 
+nnoremap <leader>A :Ag <C-r><C-w><CR>
 
 nmap <leader>m :MarkedOpen!<cr>
 nmap <leader>mq :MarkedQuit<cr>
@@ -518,8 +520,6 @@ let g:ctrlp_working_path_mode = 2
 
 " airline options
 let g:airline_powerline_fonts=1
-let g:airline_left_sep=''
-let g:airline_right_sep=''
 let g:airline_theme='base16'
 
 " don't hide quotes in json files
@@ -531,8 +531,6 @@ if (has("gui_running"))
     set guioptions=egmrt
     set background=light
     colorscheme solarized
-    let g:airline_left_sep=''
-    let g:airline_right_sep=''
     let g:airline_powerline_fonts=0
     let g:airline_theme='solarized'
 endif

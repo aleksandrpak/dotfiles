@@ -36,6 +36,7 @@ nvim +PlugInstall
 # Installing Java & Scala
 brew cask install java
 brew install scala
+brew install groovy
 brew install sbt
 curl https://raw.githubusercontent.com/n8han/conscript/master/setup.sh | sh
 
@@ -52,6 +53,12 @@ cd ~/.config/nvim/plugged/omnisharp-vim/omnisharp-roslyn
 # Building auto-complete
 cd ~/.config/nvim/plugged/YouCompleteMe
 ./install.py --clang-completer --gocode-completer --racer-completer --omnisharp-completer
+
+# Copying scripts to ~/bin
+mkdir -p ~/bin
+cp ~/.dotfiles/bin/battery_indicator.sh ~/bin/battery_indicator.sh
+cp ~/.dotfiles/bin/tm ~/bin/tm
+chmod +x ~/bin/tm
 
 # Generate ssh key for git
 ssh-keygen -t rsa -b 4096 -C "alekspak@icloud.com" -P "" -f ~/.ssh/id_rsa

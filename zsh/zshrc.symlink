@@ -12,6 +12,7 @@ export PATH=$PATH:$GOPATH/bin
 # Java & Scala variables
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
 export SCALA_HOME=/usr/local/opt/scala
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export SBT_OPTS="-Xms40M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M -Djavax.net.ssl.trustStore=cacerts -Djavax.net.ssl.trustStorePassword=changeit"
 export PATH=$PATH:$SCALA_HOME/bin
 
