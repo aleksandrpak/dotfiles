@@ -46,8 +46,6 @@ fi
 autoload -U compinit
 compinit
 
-for config ($ZSH/**/*completion.sh) source $config
-
 export EDITOR='nvim'
 
 export PATH=/usr/local/bin:$PATH
