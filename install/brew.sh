@@ -16,6 +16,7 @@ brew install jansson
 brew install webp --with-giflib --with-libtiff
 
 # CLI
+brew install reattach-to-user-namespace
 brew install tree
 brew install the_silver_searcher
 brew install wget
