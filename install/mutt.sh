@@ -2,7 +2,7 @@
 
 mkdir ~/.mail
 mkdir -p ~/.mutt/temp
-mkdir ~/.mutt/themes
+mkdir -p ~/.mutt/themes
 
 cp ~/.dotfiles/bin/mutt-notmuch-py ~/bin/mutt-notmuch-py
 
