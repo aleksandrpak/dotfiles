@@ -14,13 +14,13 @@ if [ "$(uname)" == "Darwin" ]; then
     source install/brew.sh
 
     echo "Updating OSX settings"
-    source install/osx.sh
+    source ~/.dotfiles/install/osx.sh
 
     echo "Downloading development tools"
-    source install/dev.sh
+    source ~/.dotfiles/install/dev.sh
 
     echo "Installing mutt for mail"
-    source install/mutt.sh
+    source ~/.dotfiles/install/mutt.sh
 fi
 
 echo "creating vim directories"
