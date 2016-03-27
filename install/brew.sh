@@ -26,6 +26,7 @@ brew install git
 brew install hub
 brew install zsh
 brew install tmux
+brew install zsh-syntax-highlighting
 
 # Development
 brew install sqlite
