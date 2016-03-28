@@ -34,6 +34,7 @@ Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'sickill/vim-pasta' " context-aware pasting
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free writing
 Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for presentating with vim
+Plug 'vimwiki/vimwiki' " wiki for notes and todo
 
 " language-specific plugins
 Plug 'sheerun/vim-polyglot' " collection of language specific plugins
@@ -223,6 +224,14 @@ set laststatus=2 " show the status line all the time
 " General mappings/shortcuts for functionality
 " Additional, plugin-specific mappings are located under
 " the plugins section
+
+" Moving lines (not working for alt)
+nnoremap <A-j> :m+<CR>
+nnoremap <A-k> :m-2<CR>
+inoremap <A-j> <Esc>:m+<CR>gi
+inoremap <A-k> <Esc>:m .-2<CR>gi
+vnoremap <A-j> :m '>+1<CR>gv
+vnoremap <A-k> :m '<-2<CR>gv
 
 " remap esc
 inoremap jk <esc>
@@ -483,6 +492,11 @@ let g:ycm_semantic_triggers = {'haskell' : ['.']}
 " OmniSharp
 let g:OmniSharp_server_type = 'v1'
 let g:OmniSharp_server_type = 'roslyn'
+
+" VimWiki
+let notes_and_todo_wiki = {}
+let notes_and_todo_wiki.path = "~/Dropbox/Wiki/"
+let g:vimwiki_list = [notes_and_todo_wiki]
 
 " Markdown Preview like Github
 let vim_markdown_preview_github=1

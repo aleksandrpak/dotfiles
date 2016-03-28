@@ -55,10 +55,11 @@ cd ~/.config/nvim/plugged/YouCompleteMe
 ./install.py --clang-completer --gocode-completer --racer-completer --omnisharp-completer
 
 # Copying scripts to ~/bin
-mkdir -p ~/bin
-cp ~/.dotfiles/bin/battery_indicator.sh ~/bin/battery_indicator.sh
 cp ~/.dotfiles/bin/tm ~/bin/tm
 chmod +x ~/bin/tm
+
+# iTerm2 shell integration
+curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
 
 # Generate ssh key for git
 ssh-keygen -t rsa -b 4096 -C "alekspak@icloud.com" -P "" -f ~/.ssh/id_rsa

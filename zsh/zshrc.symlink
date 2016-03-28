@@ -86,4 +86,6 @@ eval "$(fasd --init auto)"
 
 [ -s "$HOME/.dnx/dnvm/dnvm.sh" ] && . "$HOME/.dnx/dnvm/dnvm.sh" # Load dnvm
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
