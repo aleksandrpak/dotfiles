@@ -482,6 +482,7 @@ au BufNewFile,BufRead *.rs set filetype=rust
 au BufWrite *.rs :Autoformat
 let g:formatdef_rustfmt = '"rustfmt --write-mode=overwrite"'
 let g:formatters_rust = ['rustfmt']
+let g:ycm_rust_src_path = "/usr/local/rust/src"
 
 " Haskell
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc

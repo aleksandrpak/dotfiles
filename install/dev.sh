@@ -2,9 +2,7 @@
 
 # Instaling Rust
 curl -sf -L https://static.rust-lang.org/rustup.sh | sh
-mkdir -p ~/Projects/github.com/rust-lang
-cd ~/Projects/github.com/rust-lang
-git clone https://github.com/rust-lang/rust.git
+git clone https://github.com/rust-lang/rust.git /usr/local/rust
 cargo install rustfmt
 
 # Creating Mendix environment
