@@ -39,8 +39,6 @@ Plug 'vimwiki/vimwiki' " wiki for notes and todo
 " language-specific plugins
 Plug 'sheerun/vim-polyglot' " collection of language specific plugins
 Plug 'Chiel92/vim-autoformat' " Auto format files
-Plug 'ensime/ensime-vim' " refactoring tools for Scala
-Plug 'OmniSharp/omnisharp-vim' " refactoring tools for C#
 Plug 'Valloric/YouCompleteMe' " auto complete for multiple languages
 Plug 'elzr/vim-json', { 'for': 'json' } " JSON support
 Plug 'Shougo/vimproc.vim', { 'do': 'make' } " interactive command execution in vim
