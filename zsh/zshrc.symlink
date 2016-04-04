@@ -9,6 +9,9 @@ export DEP_OPENSSL_INCLUDE=/usr/local/opt/openssl/include
 export GOPATH=$HOME/Projects/gocode
 export PATH=$PATH:$GOPATH/bin
 
+# Haskell
+export PATH=$PATH:~/.cabal/bin
+
 # Java & Scala variables
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
 export SCALA_HOME=/usr/local/opt/scala

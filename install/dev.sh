@@ -14,12 +14,17 @@ mkdir -p ~/Projects/gocode
 
 # Installing Haskell
 brew install haskell-stack
+brew install cabal-install
+cabal update
+cabal install happy
+cabal install ghc-mod
 
 # Installing mono
 brew install mono
 
 # Installing python
 brew install python
+brew install python3
 brew link python
 pip install --upgrade pip
 pip install future
@@ -29,7 +34,7 @@ pip install grip
 
 # Installing nvim bundles
 pip install neovim --upgrade
-echo "iExecute PlugInstall and close vim" | nvim
+echo "iExecute :PlugInstall and close vim" | nvim
 
 # Installing Java & Scala
 brew cask install java
