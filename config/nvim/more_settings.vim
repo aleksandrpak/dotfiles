@@ -81,4 +81,3 @@ endfunction
 
 nnoremap <silent> <leader>u :call HtmlUnEscape()<cr>
 
-nmap <leader>w :setf textile<cr> :Goyo<cr>
