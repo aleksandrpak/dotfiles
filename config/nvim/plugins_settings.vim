@@ -34,6 +34,7 @@ let g:go_highlight_build_constraints = 1
 " Rust
 au BufNewFile,BufRead *.rs set filetype=rust
 au BufWrite *.rs :Autoformat
+autocmd! BufWritePost *.rs NeomakeProject cargo
 let g:formatdef_rustfmt = '"rustfmt --write-mode=overwrite"'
 let g:formatters_rust = ['rustfmt']
 let g:ycm_rust_src_path = "/usr/local/rust/src"

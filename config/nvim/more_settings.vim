@@ -6,6 +6,10 @@ if has('mouse')
     set mouse=a
 endif
 
+" Building with neomake in background and displaying error
+let g:neomake_echo_current_error=1
+let g:neomake_verbose=0
+
 " file type specific settings
 if has('autocmd') && !exists('autocommands_loaded')
     let autocommands_loaded = 1
