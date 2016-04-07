@@ -75,7 +75,7 @@ if hash hub 2>/dev/null; then
 fi
 
 # Base16 Shell
-export THEME="base16-chalk"
+export THEME="base16-eighties"
 
 if [ -z "$BACKGROUND" ]; then
     export BACKGROUND="dark"
