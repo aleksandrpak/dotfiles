@@ -33,6 +33,7 @@ Plug 'vim-scripts/matchit.zip' " extended % matching
 Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'sickill/vim-pasta' " context-aware pasting
 Plug 'vimwiki/vimwiki' " wiki for notes and todo
+Plug 'wellle/tmux-complete.vim' " autocomplete from tmux
 
 " language-specific plugins
 Plug 'sheerun/vim-polyglot' " collection of language specific plugins
