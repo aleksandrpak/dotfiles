@@ -90,3 +90,5 @@ let g:vim_json_syntax_conceal = 0
 
 let g:SuperTabCrMapping = 0
 
+" Use youcompleteme for tmux complete
+let g:tmuxcomplete#trigger = 'omnifunc'
