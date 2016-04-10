@@ -11,6 +11,8 @@ apt install zsh
 apt install nvim
 apt install tmux
 
+apt install golang
+
 chsh -s zsh
 
 # linking
