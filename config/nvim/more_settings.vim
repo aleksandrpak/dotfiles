@@ -42,8 +42,8 @@ execute "colorscheme ".$THEME
 " => Files, backups, and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set backupdir=~/.tmp
+set directory=~/.tmp
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mappings
