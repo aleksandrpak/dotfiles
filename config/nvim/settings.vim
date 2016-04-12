@@ -139,7 +139,10 @@ vnoremap <A-j> :m '>+1<CR>gv
 vnoremap <A-k> :m '<-2<CR>gv
 
 " remap esc
-inoremap jk <esc>
+inoremap kk <esc>
+
+" quit by leader q
+nmap <leader>q :q<cr>
 
 " remove extra whitespace
 nmap <leader><space> :%s/\s\+$<cr>
