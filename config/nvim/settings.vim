@@ -162,8 +162,11 @@ set pastetoggle=<F6>
 " toggle paste mode
 map <leader>v :set paste!<cr>
 
+" use space to enter colon
+nmap <space> :
+
 " clear highlighted search
-noremap <space> :set hlsearch! hlsearch?<cr>
+noremap \] :set hlsearch! hlsearch?<cr>
 
 " activate spell-checking alternatives
 nmap ;s :set invspell spelllang=en<cr>
