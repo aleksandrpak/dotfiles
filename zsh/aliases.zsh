@@ -23,6 +23,7 @@ alias lld="ls -l | grep ^d"
 alias rmf="rm -rf"
 
 # Helpers
+alias xx="exit"
 alias qq="fuck"
 alias grep='grep --color=auto'
 alias df='df -h' # disk free, in Gigabytes, not bytes
