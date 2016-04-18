@@ -121,6 +121,7 @@
     pager = less -FXRS -x2
     editor = nvim
     whitespace = cr-at-eol
+    autocrlf = false
 [rerere]
     enabled = true
 [gitsh]
@@ -129,6 +130,6 @@
     extendRegexp = true
     lineNumber = true
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [rebase]
-	instructionFormat = "[%an - %ar] %s"
+    instructionFormat = "[%an - %ar] %s"

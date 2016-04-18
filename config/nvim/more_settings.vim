@@ -6,6 +6,10 @@ if has('mouse')
     set mouse=a
 endif
 
+" folding in xml
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
+
 " Building with neomake in background and displaying error
 let g:neomake_echo_current_error=1
 let g:neomake_verbose=0
@@ -17,7 +21,7 @@ if has('autocmd') && !exists('autocommands_loaded')
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     autocmd FileType html setlocal ts=4 sts=4 sw=4 noexpandtab indentkeys-=*<return>
     autocmd FileType markdown setlocal textwidth=0 wrapmargin=0 wrap spell
-    autocmd FileType .xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
+    autocmd FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
 
     autocmd BufNewFile,BufRead *.svg set filetype=xml
 
@@ -48,6 +52,9 @@ set directory=~/.tmp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" format xml
+au FileType xml setlocal equalprg=":silent! %!xmllint --format --recover - 2>/dev/null"
+
 " markdown to html
 nmap <leader>md :%!markdown --html4tags <cr>
 
