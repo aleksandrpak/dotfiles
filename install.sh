@@ -34,9 +34,7 @@ if [ "$(uname)" == "Linux" ]; then # TODO: distinct from android
     # exit
     # exit
 
-    # apt install -y zsh
-    # apt install -y xmonad
-    # apt install -y x-window-system
+    # apt install -y zsh xmonad x-window-system
 fi
 
 echo "creating vim directories"
