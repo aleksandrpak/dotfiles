@@ -23,6 +23,22 @@ if [ "$(uname)" == "Darwin" ]; then
     source ~/.dotfiles/install/mutt.sh
 fi
 
+if [ "$(uname)" == "Linux" ]; then # TODO: distinct from android
+    echo "Running on Debian"
+
+    # su
+    # apt update
+    # apt upgrade
+    # apt install sudo
+    # adduser alekspak sudo
+    # exit
+    # exit
+
+    # apt install -y zsh
+    # apt install -y xmonad
+    # apt install -y x-window-system
+fi
+
 echo "creating vim directories"
 mkdir -p ~/.vim-tmp
 
