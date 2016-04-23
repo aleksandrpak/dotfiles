@@ -63,5 +63,5 @@ Some of the procedures are still required automation:
 * Finder -> Preferences -> New Finder Window show: Downloads
 * Install Taurine from AppStore
 * Install Pocket from AppStore
-* Configure dock: Finder | iTerm | Chrome | iMessage | Calendar
+* Configure dock: Finder | iTerm | Firefox | iMessage | Calendar
 * Launch iTerm: iTerm top menu -> Make iTerm2 default Term
