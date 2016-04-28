@@ -38,6 +38,11 @@ if [ "$(uname)" == "Linux" ]; then # TODO: distinct from android
 
 fi
 
+if [ 0 == 1 ]; then
+    echo "Running on Android"
+
+fi
+
 echo "creating vim directories"
 mkdir -p ~/.vim-tmp
 
