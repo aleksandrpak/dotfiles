@@ -40,7 +40,6 @@ fi
 
 if [ 0 == 1 ]; then
     echo "Running on Android"
-
 fi
 
 echo "creating vim directories"
