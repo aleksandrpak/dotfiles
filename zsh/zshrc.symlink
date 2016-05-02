@@ -22,7 +22,8 @@ export PATH=$PATH:$SCALA_HOME/bin
 
 # Rust variables
 export RUST_SRC_PATH=~/Projects/github.com/rust-lang/rust/src
-export PATH=$PATH:/Users/Aleksandr/.cargo/bin
+export PATH=$PATH:~/.cargo/bin
+export PATH=$PATH:~/Projects/github.com/arcnmx/cargo-clippy/target/release
 
 # Mendix variables
 export MXBUILD_PATH=~/Mendix/bin
