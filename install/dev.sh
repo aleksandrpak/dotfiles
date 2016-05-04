@@ -47,8 +47,10 @@ cd ~/.config/nvim/plugged/YouCompleteMe
 ./install.py --clang-completer --gocode-completer --racer-completer
 
 # Copying scripts to ~/bin
-cp ~/.dotfiles/bin/tm ~/bin/tm
+ln -s ~/.dotfiles/bin/tm ~/bin/tm
+ln -s ~/.dotfiles/bin/mxbin ~/bin/mxbin
 chmod +x ~/bin/tm
+chmod +x ~/bin/mxbin
 
 # iTerm2 shell integration
 curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
