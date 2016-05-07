@@ -5,10 +5,14 @@ echo "Installing dotfiles"
 echo "Initializing submodule(s)"
 git submodule update --init --recursive
 
+source install/functions.sh
 source install/link.sh
 
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$( os_name )" == "OSX" ]
+then
     echo "Running on OSX"
+
+    prepare_osx
 
     echo "Brewing all the things"
     source install/brew.sh

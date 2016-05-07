@@ -1,58 +1,56 @@
 #!/bin/sh
 
-if test ! $(which brew); then
-    echo "Installing homebrew"
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
 echo "Installing homebrew packages..."
 
 # Compiling and libraries
-brew install cmake
-brew install libconfig
-brew install libevent
-brew install readline
-brew install jansson
-brew install webp --with-giflib --with-libtiff
+get cmake
+get libconfig
+get libevent
+get readline
+get jansson
+get webp --with-giflib --with-libtiff
 
-# CLI
-brew install reattach-to-user-namespace
-brew install tree
-brew install the_silver_searcher
-brew install wget
-brew install thefuck
-brew install fasd
-brew install git
-brew install hub
-brew install zsh
-brew install tmux
-brew install zsh-syntax-highlighting
+# # CLI
+get reattach-to-user-namespace
+get tree
+get the_silver_searcher
+get wget
+get thefuck
+get fasd
+get git
+get hub
+get zsh
+get tmux
+get zsh-syntax-highlighting
 
 # Development
-brew install sqlite
-brew install macvim --with-override-system-vim
-brew install lua --with-completion
-brew install neovim/neovim/neovim
+get sqlite
+get lua --with-completion
+get neovim/neovim/neovim
 
 # Mail
-brew install offlineimap
-brew install msmtp
-brew install notmuch
-brew install urlview
-brew tap kevwil/patches
-brew install kevwil/patches/mutt --with-sidebar-patch
+get offlineimap
+get msmtp
+get notmuch
+get urlview
+get mutt --with-sidebar-patch
 
 # Dekstop
-brew install caskroom/cask/brew-cask
-brew cask install iterm2
-brew cask install firefox
-brew cask install dropbox
-brew cask install alfred
-brew cask install amethyst
-brew cask install spotify
-brew cask install telegram
-brew cask install slack
+get_desktop iterm2
+get_desktop firefox
+get_desktop dropbox
+get_desktop alfred
+get_desktop amethyst
+get_desktop spotify
+get_desktop telegram
+get_desktop slack
 
 # Font setup
-brew cask install caskroom/fonts/font-hack
-cd ~/Library/Fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
+get_desktop caskroom/fonts/font-hack
+
+cd ~/Library/Fonts
+if [ ! -e "Droid Sans Mono for Powerline Nerd Font Complete.otf" ]
+then
+    curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20for%20Powerline%20Nerd%20Font%20Complete.otf
+fi
+
