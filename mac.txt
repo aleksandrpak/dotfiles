@@ -5,3 +5,6 @@
 5. defaults write -g NSWindowResizeTime -float 0.001
 6. defaults write com.apple.dock expose-animation-duration -int 0 && killall Dock
 7. no title bar for iterm
+8. add cargo clippy install
+9. amethyst settings
+

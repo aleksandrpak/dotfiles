@@ -100,9 +100,9 @@ function scpp() {
 
 # set the background color to light
 function light() {
-    export BACKGROUND="light" && reload!
+    export BACKGROUND="light" && reload
 }
 
 function dark() {
-    export BACKGROUND="dark" && reload!
+    export BACKGROUND="dark" && reload
 }

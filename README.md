@@ -57,7 +57,7 @@ Some of the procedures are still required automation:
 * System Preferences -> Keyboard -> Input Sources -> Add Russian
 * System Preferences -> Keyboard -> Shortcuts -> Input Sources: Command + Space
 * System Preferences -> Keyboard -> Shortcuts -> Mission Control: Disable F11, F12
-* System Preferences -> Desktop & Screen Saver -> Desktop -> Solid Colors -> Solid Gray Dark
+* System Preferences -> Desktop & Screen Saver -> Desktop -> Solid Colors -> Solid Gray Pro Ultra Dark
 * System Preferences -> General -> Enable 'Use dark menu bar and Dock'
 * System Preferences -> Notifications -> Do Not Disturb -> From 05:00 to 04:59
 * Finder -> Preferences -> New Finder Window show: Downloads
@@ -65,3 +65,11 @@ Some of the procedures are still required automation:
 * Install Pocket from AppStore
 * Configure dock: Finder | iTerm | Firefox | iMessage | Calendar
 * Launch iTerm: iTerm top menu -> Make iTerm2 default Term
+* System Preferences -> Mission Control -> Disable Automatically rearrange Spaces based on most recent use
+* System Preferences -> Dock -> Automatically hide and show the Dock
+* System Preferences -> Keyboard -> Shortcuts -> Mission Control -> Enable shortcuts for desktops
+* defaults write -g NSWindowResizeTime -float 0.001
+* defaults write com.apple.dock expose-animation-duration -int 0
+* iTerm Preferences -> Profiles -> Window -> Style: No Title Bar
+* add cargo clippy install
+* amethyst settings
