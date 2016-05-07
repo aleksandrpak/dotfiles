@@ -1,6 +1,7 @@
 1. remove auto rearrange
 2. Auto hide dock
 3. ultra dark gray background
-4. 1-term, 2-browser
+4. 1-term, 2-browser (cmd+1.. to switch)
 5. defaults write -g NSWindowResizeTime -float 0.001
 6. defaults write com.apple.dock expose-animation-duration -int 0 && killall Dock
+7. no title bar for iterm

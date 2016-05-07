@@ -96,3 +96,12 @@ env-update && source /etc/profile && export PS1="(chroot) $PS1" # reload setting
 
 # installing kernel
 emerge --ask sys-kernel/gentoo-sources # choose kernel at https://wiki.gentoo.org/wiki/Kernel/Overview
+
+emerge --ask sys-apps/pciutils
+cd /usr/src/linux
+make menuconfig # configure
+make && make modules_install # make
+make install
+mkdir -p /boot/efi/boot
+cp /boot/vmlinuz-* /boot/efi/boot/bootx64.efi 
+emerge --ask sys-kernel/linux-firmware
