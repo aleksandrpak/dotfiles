@@ -1,5 +1,11 @@
 #!/usr/bin/env sh
 
+echo "Reduce window resize time"
+defaults write -g NSWindowResizeTime -float 0.001
+
+echo "Reduce desktop switching animation time"
+defaults write com.apple.dock expose-animation-duration -int 0
+
 echo "Finder: show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 

@@ -68,8 +68,6 @@ Some of the procedures are still required automation:
 * System Preferences -> Mission Control -> Disable Automatically rearrange Spaces based on most recent use
 * System Preferences -> Dock -> Automatically hide and show the Dock
 * System Preferences -> Keyboard -> Shortcuts -> Mission Control -> Enable shortcuts for desktops
-* defaults write -g NSWindowResizeTime -float 0.001
-* defaults write com.apple.dock expose-animation-duration -int 0
 * iTerm Preferences -> Profiles -> Window -> Style: No Title Bar
 * add cargo clippy install
 * amethyst settings
