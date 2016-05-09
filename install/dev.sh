@@ -9,12 +9,12 @@ cargo install rustfmt
 mkdir -p ~/Mendix/bin
 
 # Installing Go
-brew install go
+get go
 mkdir -p ~/Projects/gocode
 
 # Installing Haskell
-brew install haskell-stack
-brew install cabal-install
+get haskell-stack
+get cabal-install
 cabal update
 cabal install happy
 cabal install ghc-mod
@@ -37,9 +37,9 @@ pip install neovim --upgrade
 echo "iExecute :PlugInstall and close vim" | nvim
 
 # Installing Java & Scala
-brew cask install java
-brew install scala
-brew install sbt
+get_desktop install java
+get scala
+get sbt
 curl https://raw.githubusercontent.com/n8han/conscript/master/setup.sh | sh
 
 # Building auto-complete
