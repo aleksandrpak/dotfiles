@@ -20,11 +20,11 @@ cabal install happy
 cabal install ghc-mod
 
 # Installing mono
-brew install mono
+get mono
 
 # Installing python
-brew install python
-brew install python3
+get python
+get python3
 brew link python
 pip install --upgrade pip
 pip install future
