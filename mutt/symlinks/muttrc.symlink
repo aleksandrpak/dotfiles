@@ -132,7 +132,7 @@ set reply_to                         # reply to Reply to: field
 set reverse_name                     # reply as whomever it was to
 set include                          # include message in replies
 set forward_quote                    # include message in forwards
-set editor = "vim"                   # Use MacVim to compose email.
+set editor = "nvim"                  # Use neovim to compose email.
 set from     = "aleksvpak@gmail.com"
 set sendmail = "/usr/local/bin/msmtp -a aleksvpak"
 set sendmail_wait = 0
