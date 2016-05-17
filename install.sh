@@ -3,10 +3,11 @@
 echo "Installing dotfiles"
 
 echo "Initializing submodule(s)"
+cd ~/.dotfiles
 git submodule update --init --recursive
 
-source install/functions.sh
-source install/link.sh
+source ~/.dotfiles/install/functions.sh
+source ~/.dotfiles/install/link.sh
 
 if [ "$( os_name )" == "OSX" ]
 then
@@ -15,7 +16,7 @@ then
     prepare_osx
 
     echo "Brewing all the things"
-    source install/brew.sh
+    source ~/.dotfiles/install/brew.sh
 
     echo "Updating OSX settings"
     source ~/.dotfiles/install/osx.sh
