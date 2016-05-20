@@ -37,6 +37,7 @@ Plug 'wellle/tmux-complete.vim' " autocomplete from tmux
 
 " language-specific plugins
 Plug 'sheerun/vim-polyglot' " collection of language specific plugins
+Plug 'derekwyatt/vim-scala' " scala specific plugin
 Plug 'Chiel92/vim-autoformat' " Auto format files
 Plug 'Valloric/YouCompleteMe' " auto complete for multiple languages
 Plug 'elzr/vim-json', { 'for': 'json' } " JSON support

@@ -23,6 +23,9 @@ let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
 
+" Unused polyglot plugins
+let g:polyglot_disabled = ['scala']
+
 " Golang
 let g:go_fmt_command = "goimports"
 let g:go_highlight_functions = 1
