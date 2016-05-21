@@ -71,3 +71,4 @@ Some of the procedures are still required automation:
 * iTerm Preferences -> Profiles -> Window -> Style: No Title Bar
 * add cargo clippy install
 * amethyst settings
+* iTerm2 -> Profiles -> Advanced -> Triggers -> pomo finished (Show alert, instant)
