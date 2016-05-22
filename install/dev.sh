@@ -50,6 +50,7 @@ cd ~/.config/nvim/plugged/YouCompleteMe
 
 # Copying scripts to ~/bin
 chmod +x ~/.dotfiles/bin/tm
+chmod +x ~/.dotfiles/bin/pomo
 chmod +x ~/.dotfiles/bin/mxbin
 
 # iTerm2 shell integration
