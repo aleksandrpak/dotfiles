@@ -138,9 +138,6 @@ inoremap <A-k> <Esc>:m .-2<CR>gi
 vnoremap <A-j> :m '>+1<CR>gv
 vnoremap <A-k> :m '<-2<CR>gv
 
-" remap esc
-inoremap kk <esc>
-
 " quit by leader q
 nmap <leader>q :q<cr>
 

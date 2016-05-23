@@ -1,0 +1,89 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+import time
+from subprocess import call
+from datetime import datetime
+
+work_duration = 25 
+rest_duration = 5
+avg_line_len = 128
+work = 'work'
+rest = 'rest'
+date_format = '%Y-%m-%d-%H-%M-%S'
+file_name = os.path.expanduser('~/Dropbox/pomo/history.txt')
+os.makedirs(os.path.dirname(file_name), exist_ok=True)
+
+def get_state():
+    size = os.stat(file_name).st_size
+    if size == 0:
+        return None
+    else:
+        file.seek(-min(avg_line_len, size), 2)
+        return file.readlines()[-1].decode('utf8')
+
+
+def get_state_value(state, idx):
+    return state.split(';')[idx].split('=')[1]
+
+def status():
+    state = get_state()
+    if state == None or 'ended' in state:
+        print('pomo stopped')
+    else:
+        type = get_state_value(state, 0)
+        duration = int(get_state_value(state, 1))
+        started = datetime.strptime(get_state_value(state, 2), date_format)
+        elapsed = (datetime.utcnow() - started).seconds
+        minutes = elapsed // 60
+        seconds = elapsed - minutes * 60
+
+        if duration <= minutes:
+            stop()
+
+            if type == work:
+                start(rest, rest_duration)
+                call(['open', '-a', 'iTerm'])
+                time.sleep(0.2)
+                print('pomo' + ' ' + 'finished')
+        else:
+            minutes = duration - minutes - (1 if seconds > 0 else 0)
+            seconds = 60 - seconds if seconds > 0 else 0
+            print(type + ': {:02}:{:02}'.format(minutes, seconds))
+
+
+def start(type, duration):
+    stop()
+    file.seek(0, 2)
+    started = datetime.utcnow().strftime(date_format)
+    line = 'type=' + type + ';duration=' + str(duration) + ';started=' + started
+    file.write(line.encode('utf8'))
+
+
+def stop():
+    state = get_state()
+    if state == None or 'ended' in state:
+        return
+
+    file.seek(0, 2)
+    line = ';ended=' + str(datetime.utcnow()) + '\n'
+    file.write(line.encode('utf8'))
+
+
+if len(sys.argv) == 1:
+    print("help") # TODO: Print help
+    sys.exit()
+
+file = open(file_name, 'ba+')
+cmd = sys.argv[1]
+
+if cmd == 'status':
+    status()
+elif cmd == 'start':
+    start(work, work_duration)
+elif sys.argv[1] == 'stop':
+    stop()
+
+file.close()
+
