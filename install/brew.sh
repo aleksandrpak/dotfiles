@@ -37,7 +37,7 @@ get mutt --with-sidebar-patch
 
 # Dekstop
 get_desktop iterm2
-get_desktop firefox
+get_desktop google-chrome
 get_desktop dropbox
 get_desktop alfred
 get_desktop amethyst
