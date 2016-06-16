@@ -27,6 +27,7 @@ get zsh-syntax-highlighting
 get sqlite
 get lua --with-completion
 get neovim/neovim/neovim
+get asciinema
 
 # Mail
 get offlineimap
