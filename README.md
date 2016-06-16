@@ -73,3 +73,4 @@ Some of the procedures are still required automation:
 * add cargo clippy install
 * amethyst settings
 * iTerm2 -> Profiles -> Advanced -> Triggers -> pomo + ' ' + finished (Show alert, instant)
+* Add Elm and Elixir setup including plugin requirements

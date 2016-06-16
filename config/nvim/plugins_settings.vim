@@ -46,7 +46,7 @@ let g:ycm_rust_src_path = "/usr/local/rust/src"
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 let g:haskell_conceal_wide = 1
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
+let g:ycm_semantic_triggers = {'haskell' : ['.'], 'elm' : ['.']}
 
 " VimWiki
 let notes_and_todo_wiki = {}
@@ -87,6 +87,12 @@ let g:ctrlp_working_path_mode = 2
 " airline options
 let g:airline_powerline_fonts=1
 let g:airline_theme='base16'
+
+" Elm configs
+let g:elm_format_autosave = 1
+let g:elm_syntastic_show_warnings = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 
 " don't hide quotes in json files
 let g:vim_json_syntax_conceal = 0

@@ -46,6 +46,8 @@ Plug 'JamshedVesuna/vim-markdown-preview' " Preview markdown in browser
 Plug 'tpope/vim-markdown', { 'for': 'markdown' } " markdown support
 Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] } " markdown support
 Plug 'fatih/vim-go', { 'for': 'go' } " go support
+Plug 'slashmili/alchemist.vim' " elixir support
+Plug 'elmcast/elm-vim' " elm support
 
 " Haskell plugins
 Plug 'dag/vim2hs' " collection of scripts
