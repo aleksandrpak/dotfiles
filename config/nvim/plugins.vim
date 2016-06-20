@@ -48,6 +48,7 @@ Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] } " markdown support
 Plug 'fatih/vim-go', { 'for': 'go' } " go support
 Plug 'slashmili/alchemist.vim' " elixir support
 Plug 'elmcast/elm-vim' " elm support
+Plug 'petRUShka/vim-gap' " gap support
 
 " Haskell plugins
 Plug 'dag/vim2hs' " collection of scripts
