@@ -94,6 +94,19 @@ let g:elm_syntastic_show_warnings = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
+" C# configs
+let g:OmniSharp_server_type = 'roslyn'
+let g:OmniSharp_timeout = 1
+augroup omnisharp_commands
+    autocmd!
+
+    " Builds can also run asynchronously with vim-dispatch installed
+    autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
+
+    "show type information automatically when the cursor stops moving
+    autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
+augroup END
+
 " don't hide quotes in json files
 let g:vim_json_syntax_conceal = 0
 
