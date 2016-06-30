@@ -49,6 +49,7 @@ Plug 'fatih/vim-go', { 'for': 'go' } " go support
 Plug 'slashmili/alchemist.vim' " elixir support
 Plug 'elmcast/elm-vim' " elm support
 Plug 'petRUShka/vim-gap' " gap support
+Plug 'OmniSharp/omnisharp-vim' " c# support
 
 " Haskell plugins
 Plug 'dag/vim2hs' " collection of scripts

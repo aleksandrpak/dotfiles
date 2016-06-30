@@ -138,6 +138,9 @@ inoremap <A-k> <Esc>:m .-2<CR>gi
 vnoremap <A-j> :m '>+1<CR>gv
 vnoremap <A-k> :m '<-2<CR>gv
 
+" rename word
+nnoremap <leader>c :%s/<C-r><C-w>/<C-r><C-w>
+
 " quit by leader q
 nmap <leader>q :q<cr>
 

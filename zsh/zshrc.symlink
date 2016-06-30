@@ -21,7 +21,7 @@ export SBT_OPTS="-Xms40M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPe
 export PATH=$PATH:$SCALA_HOME/bin
 
 # Rust variables
-export RUST_SRC_PATH=~/Projects/github.com/rust-lang/rust/src
+export RUST_SRC_PATH=/usr/local/rust/src
 export PATH=$PATH:~/.cargo/bin
 export PATH=$PATH:~/Projects/github.com/arcnmx/cargo-clippy/target/release
 

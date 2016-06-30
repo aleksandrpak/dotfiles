@@ -22,6 +22,7 @@ get hub
 get zsh
 get tmux
 get zsh-syntax-highlighting
+get aria2
 
 # Development
 get sqlite
