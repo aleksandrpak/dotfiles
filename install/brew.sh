@@ -41,7 +41,6 @@ get_desktop iterm2
 get_desktop google-chrome
 get_desktop dropbox
 get_desktop alfred
-get_desktop amethyst
 get_desktop spotify
 get_desktop telegram
 get_desktop slack
