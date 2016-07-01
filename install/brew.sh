@@ -45,6 +45,7 @@ get_desktop alfred
 get_desktop spotify
 get_desktop telegram
 get_desktop slack
+get_desktop mattr-slate
 
 # Font setup
 get_desktop caskroom/fonts/font-hack
