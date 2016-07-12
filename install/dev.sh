@@ -22,6 +22,9 @@ cabal update
 cabal install happy
 cabal install ghc-mod
 
+# Installing Elm
+get elm
+
 # Installing mono
 get mono
 
