@@ -15,6 +15,7 @@ get go
 mkdir -p ~/Projects/gocode
 
 # Installing Haskell
+get ghc
 get haskell-stack
 get cabal-install
 cabal update

@@ -11,6 +11,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # Haskell
 export PATH=$PATH:~/.cabal/bin
+export PATH=$PATH:~/.local/bin
 
 # Java & Scala variables
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
