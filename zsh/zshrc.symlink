@@ -19,6 +19,7 @@ export SCALA_HOME=/usr/local/opt/scala
 export GROOVY_HOME=/usr/local/opt/groovy/libexec
 export ANDROID_HOME=/usr/local/android-sdk-macosx
 export SBT_OPTS="-Xms40M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M -Djavax.net.ssl.trustStore=cacerts -Djavax.net.ssl.trustStorePassword=changeit"
+export MAVEN_OPTS="-Djavax.net.ssl.trustStore=$JAVA_HOME/lib/security/jssecacerts -Djavax.net.ssl.trustStorePassword=changeit"
 export PATH=$PATH:$SCALA_HOME/bin
 
 # Rust variables
