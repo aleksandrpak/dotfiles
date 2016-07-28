@@ -76,3 +76,4 @@ Some of the procedures are still required automation:
 * iTerm2 -> Profiles -> Advanced -> Triggers -> pomo + ' ' + finished (Show alert, instant)
 * Add Elm and Elixir setup including plugin requirements
 * Show battery percentage
+* install shell integration for iterm2
