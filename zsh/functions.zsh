@@ -106,3 +106,7 @@ function light() {
 function dark() {
     export BACKGROUND="dark" && reload
 }
+
+function e() {
+    docker run -it -e THEME=$THEME -e BACKGROUND=$BACKGROUND -v ~/.config/nvim:/root/.config/nvim -v $(pwd):/code -w /code alekspak/neovim nvim $1   
+}
