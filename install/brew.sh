@@ -16,7 +16,6 @@ get tree
 get xz
 get ag
 get wget
-get thefuck
 get fasd
 get git
 get hub
