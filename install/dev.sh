@@ -7,9 +7,6 @@ cd /usr/local/rust
 git pull
 cargo install rustfmt
 
-# Creating Mendix environment
-mkdir -p ~/Mendix/bin
-
 # Installing Go
 get go
 mkdir -p ~/Projects/gocode
@@ -21,9 +18,6 @@ get cabal-install
 cabal update
 cabal install happy
 cabal install ghc-mod
-
-# Installing Elm
-get elm
 
 # Installing mono
 get mono
@@ -52,15 +46,5 @@ curl https://raw.githubusercontent.com/n8han/conscript/master/setup.sh | sh
 cd ~/.config/nvim/plugged/YouCompleteMe
 ./install.py --clang-completer --gocode-completer --racer-completer
 
-# Copying scripts to ~/bin
-chmod +x ~/.dotfiles/bin/tm
-chmod +x ~/.dotfiles/bin/pomo
-chmod +x ~/.dotfiles/bin/mxbin
-
 # iTerm2 shell integration
 curl -L https://iterm2.com/misc/install_shell_integration.sh | bash
-
-# Generate ssh key for git
-ssh-keygen -t rsa -b 4096 -C "alekspak@icloud.com" -P "" -f ~/.ssh/id_rsa
-ssh-add ~/.ssh/id_rsa
-pbcopy < ~/.ssh/id_rsa.pub

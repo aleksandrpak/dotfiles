@@ -44,7 +44,6 @@ get_desktop dropbox
 get_desktop alfred
 get_desktop spotify
 get_desktop telegram
-get_desktop slack
 get_desktop mattr-slate
 
 # Font setup
