@@ -13,7 +13,8 @@ get webp --with-giflib --with-libtiff
 # # CLI
 get reattach-to-user-namespace
 get tree
-get the_silver_searcher
+get xz
+get ag
 get wget
 get thefuck
 get fasd

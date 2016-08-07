@@ -64,6 +64,7 @@ Some of the procedures are still required automation:
 * Install Taurine from AppStore
 * Install Pocket from AppStore
 * Install Wunderlist from AppStore
+* Install 1password from caskroom
 * Configure dock: Finder | iTerm | Firefox | iMessage | Calendar
 * Launch iTerm: iTerm top menu -> Make iTerm2 default Term
 * System Preferences -> Mission Control -> Disable Automatically rearrange Spaces based on most recent use
@@ -74,3 +75,5 @@ Some of the procedures are still required automation:
 * amethyst settings
 * iTerm2 -> Profiles -> Advanced -> Triggers -> pomo + ' ' + finished (Show alert, instant)
 * Add Elm and Elixir setup including plugin requirements
+* Show battery percentage
+* install shell integration for iterm2
