@@ -1,11 +1,12 @@
 #!/bin/sh
 
 # Instaling Rust
-curl -sf -L https://static.rust-lang.org/rustup.sh | sh
+curl -sSf https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly
 git clone https://github.com/rust-lang/rust.git /usr/local/rust
 cd /usr/local/rust
 git pull
 cargo install rustfmt
+cargo install racer
 
 # Installing Go
 get go
