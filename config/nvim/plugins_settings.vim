@@ -17,12 +17,6 @@ let g:rooter_patterns = ['tags', '.git', '.git/']
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<C-l><C-l>"
 
-" These are the tweaks I apply to YCM's config, you don't need them but they might help.
-" YCM gives you popups and splits by default that some people might not like, so these should tidy it up a bit for you.
-let g:ycm_add_preview_to_completeopt=0
-let g:ycm_confirm_extra_conf=0
-set completeopt-=preview
-
 " Unused polyglot plugins
 let g:polyglot_disabled = ['scala']
 
@@ -33,6 +27,8 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#use_cache = 1
 
 " Rust
 au BufNewFile,BufRead *.rs set filetype=rust
@@ -40,13 +36,13 @@ au BufWrite *.rs :Autoformat
 autocmd! BufWritePost *.rs NeomakeProject cargo
 let g:formatdef_rustfmt = '"rustfmt --write-mode=overwrite"'
 let g:formatters_rust = ['rustfmt']
-let g:ycm_rust_src_path = "/usr/local/rust/src"
+let g:racer_cmd = "racer"
+let $RUST_SRC_PATH = "/usr/local/rust/src/"
 
 " Haskell
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 let g:haskell_conceal_wide = 1
-let g:ycm_semantic_triggers = {'haskell' : ['.'], 'elm' : ['.']}
 
 " VimWiki
 let notes_and_todo_wiki = {}
@@ -112,5 +108,7 @@ let g:vim_json_syntax_conceal = 0
 
 let g:SuperTabCrMapping = 0
 
-" Use youcompleteme for tmux complete
-let g:tmuxcomplete#trigger = 'omnifunc'
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+set completeopt+=noinsert
+set completeopt+=noselect

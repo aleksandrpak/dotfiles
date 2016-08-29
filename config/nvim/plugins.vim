@@ -32,29 +32,19 @@ Plug 'AndrewRadev/splitjoin.vim' " single/multi line code handler: gS - split on
 Plug 'vim-scripts/matchit.zip' " extended % matching
 Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'sickill/vim-pasta' " context-aware pasting
-Plug 'vimwiki/vimwiki' " wiki for notes and todo
-Plug 'wellle/tmux-complete.vim' " autocomplete from tmux
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
+Plug 'Konfekt/FastFold' " folding
 
 " language-specific plugins
 Plug 'sheerun/vim-polyglot' " collection of language specific plugins
-Plug 'derekwyatt/vim-scala' " scala specific plugin
 Plug 'Chiel92/vim-autoformat' " Auto format files
-Plug 'Valloric/YouCompleteMe' " auto complete for multiple languages
 Plug 'elzr/vim-json', { 'for': 'json' } " JSON support
 Plug 'Shougo/vimproc.vim', { 'do': 'make' } " interactive command execution in vim
 Plug 'JamshedVesuna/vim-markdown-preview' " Preview markdown in browser
 Plug 'tpope/vim-markdown', { 'for': 'markdown' } " markdown support
 Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] } " markdown support
 Plug 'fatih/vim-go', { 'for': 'go' } " go support
-Plug 'slashmili/alchemist.vim' " elixir support
-Plug 'elmcast/elm-vim' " elm support
-Plug 'petRUShka/vim-gap' " gap support
-Plug 'OmniSharp/omnisharp-vim' " c# support
-
-" Haskell plugins
-Plug 'dag/vim2hs' " collection of scripts
-Plug 'eagletmt/neco-ghc' " auto-complete
-Plug 'eagletmt/ghcmod-vim' " ghc-mod to vim
-Plug 'enomsg/vim-haskellConcealPlus' " concealing
+Plug 'zchee/deoplete-go', { 'do': 'make'} " Golang
+Plug 'racer-rust/vim-racer' " racer
 
 call plug#end()

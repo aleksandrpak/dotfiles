@@ -10,6 +10,7 @@ cargo install rustfmt
 # Installing Go
 get go
 mkdir -p ~/Projects/gocode
+go get -u github.com/nsf/gocode
 
 # Installing Haskell
 get ghc
