@@ -13,6 +13,7 @@ get webp --with-giflib --with-libtiff
 # # CLI
 get reattach-to-user-namespace
 get tree
+get speedtest_cli
 get xz
 get ag
 get wget
