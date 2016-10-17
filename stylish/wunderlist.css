@@ -1,0 +1,59 @@
+/** User **/
+
+#user-toolbar {
+  background: #4c4c4c !important;
+}
+
+#user-toolbar > a > span.user-name {
+  color: #fff;    
+}
+
+
+/** Lists **/
+
+#lists > div > div.lists-scroll {
+  background: #4c4c4c !important;
+}
+
+#lists > div > div.lists-scroll > ul.filters-collection > li > a > span.title > text {
+  color: #fff;
+}
+
+#lists > div > div.lists-scroll > ul.lists-collection > li > a > span.title {
+  color: #fff;
+}
+
+#lists > div > div.lists-scroll > ul.filters-collection > li.sidebarItem.active > a > span.title > text {
+  color: #000;
+}
+
+#lists > div > div.lists-scroll > ul.lists-collection > li.sidebarItem.owner.list.draggable.active > a > span.title {
+  color: #000;
+}
+
+
+/** Tasks **/
+
+#tasks > div.tasks-scroll > div.task-list.inbox > ol > li > div {
+  background: #4c4c4c !important;
+}
+
+#tasks > div.tasks-scroll > div.task-list > ol > li > div {
+  background: #4c4c4c !important;
+}
+
+#tasks > div.tasks-scroll > div.task-list > ol > li.taskItem.selected > div {
+  background: #fff !important;
+}
+
+#tasks > div.tasks-scroll > div.task-list.inbox > ol > li > div > div.taskItem-titleWrapper > span {
+  color: #fff;
+}
+
+#tasks > div.tasks-scroll > div.task-list > ol > li > div > div.taskItem-titleWrapper > span {
+  color: #fff;
+}
+
+#tasks > div.tasks-scroll > div.task-list > ol > li.taskItem.selected > div > div.taskItem-titleWrapper > span {
+  color: #000;
+}

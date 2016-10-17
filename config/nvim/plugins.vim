@@ -46,5 +46,6 @@ Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] } " markdown support
 Plug 'fatih/vim-go', { 'for': 'go' } " go support
 Plug 'zchee/deoplete-go', { 'do': 'make'} " Golang
 Plug 'racer-rust/vim-racer' " racer
+Plug 'nathanielc/vim-tickscript' " Influx Tick script
 
 call plug#end()
