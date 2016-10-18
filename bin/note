@@ -1,0 +1,6 @@
+#!/bin/sh
+
+pandoc -f odt -t markdown -o temp.md $@
+nvim temp.md
+pandoc -f markdown -t odt -o $@ temp.md
+rm -f temp.md
