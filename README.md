@@ -11,7 +11,7 @@
 Clone the dotfiles repository to your computer. This can be placed anywhere, and symbolic links will be created to reference it from your home directory.
 
 ```bash
-git clone https://github.com/aleksandrpak/dotfiles.git ~/.dotfiles
+git clone git@github.com:aleksandrpak/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 sh install.sh
 ```
@@ -58,4 +58,4 @@ Some of the procedures are still required automation:
 * Launch iTerm: iTerm top menu -> Make iTerm2 default Term
 * iTerm Preferences -> Profiles -> Window -> Style: No Title Bar
 * iTerm2 -> Profiles -> Advanced -> Triggers -> pomo + ' ' + finished (Show alert, instant)
-* install shell integration for iterm2
+* iTerm2 -> Install Shell Integration
