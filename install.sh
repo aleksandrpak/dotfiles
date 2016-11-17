@@ -27,9 +27,6 @@ then
     echo "Downloading development tools"
     source ~/.dotfiles/install/dev.sh
 
-    echo "Installing mutt for mail"
-    source ~/.dotfiles/install/mutt.sh
-
     echo "Configuring zsh as default shell"
     chsh -s $(which zsh)
 fi
