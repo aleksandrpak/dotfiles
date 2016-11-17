@@ -1,0 +1,5 @@
+# enable mouse support for switching panes/windows
+setw -g mode-mouse on
+setw -g mouse-resize-pane on
+setw -g mouse-select-pane on
+setw -g mouse-select-window on
