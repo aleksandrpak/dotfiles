@@ -26,6 +26,3 @@ pip install grip
 # Installing nvim bundles
 pip install neovim --upgrade
 echo "iExecute :PlugInstall and close vim" | nvim
-
-# iTerm2 shell integration
-curl -L https://iterm2.com/misc/install_shell_integration.sh | bash

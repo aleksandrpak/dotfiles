@@ -15,9 +15,6 @@ defaults write com.apple.terminal StringEncodings -array 4
 echo "expand save dialog by default"
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
-echo "show the ~/Library folder in Finder"
-chflags nohidden ~/Library
-
 echo "Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)"
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 

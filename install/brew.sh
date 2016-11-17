@@ -2,49 +2,19 @@
 
 echo "Installing homebrew packages..."
 
-# Compiling and libraries
-get cmake
-get libconfig
-get libevent
-get readline
-get jansson
-get webp --with-giflib --with-libtiff
-
 # # CLI
 get reattach-to-user-namespace
 get tree
-get speedtest_cli
-get xz
 get ag
 get wget
-get fasd
-get git
-get hub
 get zsh
 get tmux
 get zsh-syntax-highlighting
-get aria2
 
 # Development
-get sqlite
-get lua --with-completion
 get neovim/neovim/neovim
-get asciinema
-
-# Mail
-get offlineimap
-get msmtp
-get notmuch
-get urlview
-get mutt --with-sidebar-patch
 
 # Dekstop
-get_desktop iterm2
-get_desktop google-chrome
-get_desktop dropbox
-get_desktop alfred
-get_desktop spotify
-get_desktop telegram
 get_desktop mattr-slate
 
 # Font setup
