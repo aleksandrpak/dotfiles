@@ -31,14 +31,3 @@ for config in $DOTFILES/config/*; do
         ln -s $config $target
     fi
 done
-
-echo "\nCreating symlink for mutt"
-echo "=============================="
-MUTT_SOURCE=$DOTFILES/mutt
-MUTT_TARGET=$HOME/.mutt
-if [ -e $MUTT_TARGET ]; then
-    echo "~${MUTT_TARGET#HOME} already exists... Skipping."
-else
-    echo "Creating symlink for $MUTT_SOURCE"
-    ln -s $MUTT_SOURCE $MUTT_TARGET
-fi

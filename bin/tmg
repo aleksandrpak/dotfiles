@@ -14,14 +14,14 @@ do
 	case $opt in
 		"New Session")
 			read -p "Enter new session name: " SESSION_NAME
-			tmux new -s "$SESSION_NAME"
+			tmx "$SESSION_NAME"
 			break
 			;;
 		"zsh")
 			zsh --login
 			break;;
 		*)
-			tmux attach-session -t $opt
+			tmx $opt
 			break
 			;;
 	esac
