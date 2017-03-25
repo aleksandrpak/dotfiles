@@ -25,7 +25,7 @@ function hist() {
 
 # find shorthand
 function f() {
-    find . -name "$1"
+    find . -iname "$1"
 }
 
 
