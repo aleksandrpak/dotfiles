@@ -20,8 +20,10 @@ export PATH=$PATH:~/Projects/github.com/arcnmx/cargo-clippy/target/release
 # Fuschia
 export PATH=$PATH:~/Projects/fuchsia/.jiri_root/bin
 export PATH=$PATH:~/Projects/fuchsia/buildtools/qemu/bin
-export PATH=$PATH:~/Projects/fuschia/toolchains/aarch64-elf-5.3.0-Darwin-x86_64/bin
-export PATH=$PATH:~/Projects/fuschia/toolchains/x86_64-elf-5.3.0-Darwin-x86_64/bin
+export PATH=$PATH:~/Projects/fuchsia/toolchains/aarch64-elf-5.3.0-Darwin-x86_64/bin
+export PATH=$PATH:~/Projects/fuchsia/toolchains/x86_64-elf-5.3.0-Darwin-x86_64/bin
+export RUST_TOOLS=~/Projects/fuchsia/rust/magenta-rs/tools
+export RUST_ROOT=~/Projects/fuchsia/third_party/rust
 
 # display how long all tasks over 10 seconds take
 export REPORTTIME=10
