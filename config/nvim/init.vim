@@ -2,6 +2,8 @@ source ~/.config/nvim/plugins.vim
 
 source ~/.config/nvim/settings.vim
 
+source ~/.config/nvim/google.vim
+
 source ~/.config/nvim/more_settings.vim
 
 source ~/.config/nvim/functions.vim

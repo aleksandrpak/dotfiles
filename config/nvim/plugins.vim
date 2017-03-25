@@ -32,8 +32,8 @@ Plug 'AndrewRadev/splitjoin.vim' " single/multi line code handler: gS - split on
 Plug 'vim-scripts/matchit.zip' " extended % matching
 Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'sickill/vim-pasta' " context-aware pasting
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
 Plug 'Konfekt/FastFold' " folding
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " Autocomplete
 
 " language-specific plugins
 Plug 'sheerun/vim-polyglot' " collection of language specific plugins
@@ -46,6 +46,5 @@ Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] } " markdown support
 Plug 'fatih/vim-go', { 'for': 'go' } " go support
 Plug 'zchee/deoplete-go', { 'do': 'make'} " Golang
 Plug 'racer-rust/vim-racer' " racer
-Plug 'nathanielc/vim-tickscript' " Influx Tick script
 
 call plug#end()

@@ -66,6 +66,13 @@ nmap <silent><leader>gw :Gwrite<cr>
 nmap <silent><leader>gb :Gblame<cr>
 nmap <silent><leader>gt :Gcommit<cr>
 
+" GtImporter
+nnoremap <leader>vi :GtImporter<CR>
+nnoremap <leader>vs :GtImporterSort<CR>
+
+" Formatter
+nnoremap <leader>ff :FormatCode<CR>
+
 " Ag configs
 let g:ag_working_path_mode="r"
 nnoremap <leader>a :Ag 
