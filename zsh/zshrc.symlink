@@ -1,6 +1,9 @@
 export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
 
+# bin paths
+export PATH=$PATH:~/.local/bin
+
 # Use openssl from brew
 export OPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include 
 export DEP_OPENSSL_INCLUDE=/usr/local/opt/openssl/include
@@ -8,17 +11,6 @@ export DEP_OPENSSL_INCLUDE=/usr/local/opt/openssl/include
 # Golang variables
 export GOPATH=$HOME/Projects/gocode
 export PATH=$PATH:$GOPATH/bin
-
-# Haskell
-export PATH=$PATH:~/.cabal/bin
-export PATH=$PATH:~/.local/bin
-
-# Java & Scala variables
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home
-export SCALA_HOME=/usr/local/opt/scala
-export SBT_OPTS="-Xms40M -Xmx512M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M -Djavax.net.ssl.trustStore=cacerts -Djavax.net.ssl.trustStorePassword=changeit"
-export MAVEN_OPTS="-Djavax.net.ssl.trustStore=$JAVA_HOME/lib/security/jssecacerts -Djavax.net.ssl.trustStorePassword=changeit"
-export PATH=$PATH:$SCALA_HOME/bin
 
 # Rust variables
 export RUST_SRC_PATH=/usr/local/rust/src
@@ -30,9 +22,6 @@ export PATH=$PATH:~/Projects/fuchsia/.jiri_root/bin
 export PATH=$PATH:~/Projects/fuchsia/buildtools/qemu/bin
 export PATH=$PATH:~/Projects/fuschia/toolchains/aarch64-elf-5.3.0-Darwin-x86_64/bin
 export PATH=$PATH:~/Projects/fuschia/toolchains/x86_64-elf-5.3.0-Darwin-x86_64/bin
-
-# Mendix variables
-export MXBUILD_PATH=~/Mendix/bin
 
 # display how long all tasks over 10 seconds take
 export REPORTTIME=10
@@ -51,7 +40,6 @@ for config ($ZSH/**/*.zsh) source $config
 if [[ -a ~/.localrc ]]; then
     source ~/.localrc
 fi
-
 
 # initialize autocomplete
 autoload -U compinit
@@ -80,6 +68,15 @@ fi
 if hash hub 2>/dev/null; then
     eval "$(hub alias -s)"
 fi
+
+# g4d completions
+if [[ -a /etc/bash_completion.d/g4d ]]; then
+    source /etc/bash_completion.d/g4d
+fi
+
+# For blaze
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
 
 # Base16 Shell
 export THEME="base16-chalk"
