@@ -37,7 +37,6 @@ autocmd! BufWritePost *.rs NeomakeProject cargo
 let g:formatdef_rustfmt = '"rustfmt --write-mode=overwrite"'
 let g:formatters_rust = ['rustfmt']
 let g:racer_cmd = "racer"
-let $RUST_SRC_PATH = "/usr/local/rust/src/"
 
 " Haskell
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc

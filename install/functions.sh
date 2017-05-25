@@ -17,6 +17,7 @@ get_brew() {
 }
 
 osx_get() {
+    // TODO: Also check if binary exists
     if brew ls $1 > /dev/null 2>&1
     then
         echo "$1 is already installed. skipping."

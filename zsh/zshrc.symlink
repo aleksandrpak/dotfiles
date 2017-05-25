@@ -13,7 +13,7 @@ export GOPATH=$HOME/Projects/gocode
 export PATH=$PATH:$GOPATH/bin
 
 # Rust variables
-export RUST_SRC_PATH=/usr/local/rust/src
+export RUST_SRC_PATH=~/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
 export PATH=$PATH:~/.cargo/bin
 export PATH=$PATH:~/Projects/github.com/arcnmx/cargo-clippy/target/release
 
