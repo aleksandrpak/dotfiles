@@ -48,3 +48,5 @@ Plug 'zchee/deoplete-go', { 'do': 'make'} " Golang
 Plug 'racer-rust/vim-racer' " racer
 
 call plug#end()
+
+
