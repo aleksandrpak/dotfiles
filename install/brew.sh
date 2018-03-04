@@ -14,9 +14,6 @@ get zsh-syntax-highlighting
 # Development
 get neovim/neovim/neovim
 
-# Dekstop
-get_desktop mattr-slate
-
 # Font setup
 get_desktop caskroom/fonts/font-hack
 get_desktop font-droid-sans-mono-for-powerline
