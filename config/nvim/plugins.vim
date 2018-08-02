@@ -8,7 +8,7 @@ Plug 'ctrlpvim/ctrlp.vim' " fuzzy file finder, mapped to <leader>t
 " Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons' " file drawer
 " Plug 'airblade/vim-rooter' " changing root folder to version control root
 Plug 'rking/ag.vim' " search inside files using ag. Same as command line ag utility
-Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets, etc.
+"Plug 'Raimondi/delimitMate' " automatic closing of quotes, parenthesis, brackets, etc.
 Plug 'tpope/vim-commentary' " comment stuff out
 " Plug 'tpope/vim-unimpaired' " mappings which are simply short normal mode aliases for commonly used ex commands
 " Plug 'tpope/vim-ragtag' " endings for html, xml, etc. - ehances surround
@@ -16,7 +16,6 @@ Plug 'tpope/vim-commentary' " comment stuff out
 " Plug 'benmills/vimux' " tmux integration for vim
 Plug 'vim-airline/vim-airline' " fancy statusline
 Plug 'vim-airline/vim-airline-themes' " themes for vim-airline
-Plug 'benekastah/neomake' " neovim replacement for syntastic using neovim's job control functonality
 " Plug 'tpope/vim-fugitive' " amazing git wrapper for vim
 " Plug 'airblade/vim-gitgutter' " added/removed/modified lines for git
 " Plug 'tpope/vim-repeat' " enables repeating other supported plugins with the . command
@@ -43,9 +42,12 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' } " interactive command execution in v
 " Plug 'JamshedVesuna/vim-markdown-preview' " Preview markdown in browser
 " Plug 'tpope/vim-markdown', { 'for': 'markdown' } " markdown support
 " Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] } " markdown support
-" Plug 'fatih/vim-go', { 'for': 'go' } " go support
+Plug 'fatih/vim-go', { 'for': 'go' } " go support
 " Plug 'zchee/deoplete-go', { 'do': 'make'} " Golang
 Plug 'racer-rust/vim-racer' " racer
+
+" Plug 'benekastah/neomake' " neovim replacement for syntastic using neovim's job control functonality
+" Plug 'scrooloose/syntastic' " Syntax checking
 
 call plug#end()
 

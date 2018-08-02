@@ -96,3 +96,4 @@ eval "$(fasd --init auto)"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 source ~/.dotfiles/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /etc/bash.bashrc.d/shell_history_forwarder.sh
