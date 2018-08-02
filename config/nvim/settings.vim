@@ -107,7 +107,6 @@ syntax on
 set encoding=utf8
 let base16colorspace=256 " Access colors present in 256 colorspace"
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
-set relativenumber " show relative line numbers
 set number " show the current line number"
 
 set wrap "turn on line wrapping
