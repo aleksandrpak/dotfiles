@@ -59,3 +59,4 @@ Some of the procedures are still required automation:
 * iTerm Preferences -> Profiles -> Window -> Style: No Title Bar
 * iTerm2 -> Profiles -> Advanced -> Triggers -> pomo + ' ' + finished (Show alert, instant)
 * iTerm2 -> Install Shell Integration
+* Alfred, 1password, Magnet
