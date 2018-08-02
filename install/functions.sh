@@ -40,6 +40,7 @@ prepare_osx() {
 
     brew tap kevwil/patches
     brew tap caskroom/cask
+    brew tap dart-lang/dart
 }
 
 get() {

@@ -51,6 +51,9 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 echo "Disable guest access"
 sudo defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool NO
 
+echo "Enable key repeat when pressing & holding a key in Oni"
+defaults write com.extropy.oni ApplePressAndHoldEnabled -bool false
+
 echo "Reset Launchpad"
 [ -e ~/Library/Application\ Support/Dock/*.db ] && rm -f ~/Library/Application\ Support/Dock/*.db
 

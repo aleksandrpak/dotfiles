@@ -16,6 +16,7 @@ get neovim/neovim/neovim
 
 # Dekstop
 get_desktop mattr-slate
+get_desktop oni
 
 # Font setup
 get_desktop caskroom/fonts/font-hack
