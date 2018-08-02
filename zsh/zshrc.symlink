@@ -80,6 +80,11 @@ if [[ -a /etc/bash_completion.d/g4d ]]; then
     source /etc/bash_completion.d/g4d
 fi
 
+# hi zsh
+if [[ -a /etc/bash.bashrc.d/shell_history_forwarder.sh ]]; then
+    source /etc/bash.bashrc.d/shell_history_forwarder.sh
+fi
+
 # For blaze
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
@@ -100,4 +105,3 @@ eval "$(fasd --init auto)"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 source ~/.dotfiles/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /etc/bash.bashrc.d/shell_history_forwarder.sh
