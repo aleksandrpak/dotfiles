@@ -66,6 +66,5 @@ precmd() {
     print -P '\n%F{205}%~'
 }
 
-# export PROMPT='%(?.%F{205}.%F{red})❯%f '
 export PROMPT="%(?,%F{red}ಠ_ಠ ,%F{red}(╯°□°）╯︵ ┻━┻ )❯%f "
-export RPROMPT='`git_dirty`%F{241}$vcs_info_msg_0_%f `git_arrows``suspended_jobs`'
+export RPROMPT='%F{205}[%D{%f/%m/%y}|%*] `git_dirty`%F{241}$vcs_info_msg_0_%f `git_arrows``suspended_jobs`'

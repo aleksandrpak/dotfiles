@@ -2,72 +2,35 @@
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" close NERDTree after a file is opened
-let g:NERDTreeQuitOnOpen=0
-" show hidden files in NERDTree
-let NERDTreeShowHidden=1
-" Toggle NERDTree
-nmap <silent> <leader>k :NERDTreeToggle<cr>
-" expand to the path of the file in the current buffer
-nmap <silent> <leader>y :NERDTreeFind<cr>
-
-" rooter config
-let g:rooter_patterns = ['tags', '.git', '.git/']
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<C-l><C-l>"
-
 " Unused polyglot plugins
 let g:polyglot_disabled = ['scala']
-
-" Golang
-let g:go_fmt_command = "goimports"
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#use_cache = 1
-
-" Rust
-au BufNewFile,BufRead *.rs set filetype=rust
-au BufWrite *.rs :Autoformat
-" autocmd! BufWritePost *.rs NeomakeProject cargo
-let g:formatdef_rustfmt = '"rustfmt --write-mode=overwrite"'
-let g:formatters_rust = ['rustfmt']
-let g:racer_cmd = "racer"
-
-" Haskell
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-autocmd BufWritePost *.hs GhcModCheckAndLintAsync
-let g:haskell_conceal_wide = 1
-
-" VimWiki
-let notes_and_todo_wiki = {}
-let notes_and_todo_wiki.path = "~/Dropbox/Wiki/"
-let g:vimwiki_list = [notes_and_todo_wiki]
-
-" Markdown Preview like Github
-let vim_markdown_preview_github=1
 
 " map fuzzyfinder (CtrlP) plugin
 nmap <silent> <leader>r :CtrlPBuffer<cr>
 let g:ctrlp_map='<leader>t'
 let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_root_markers = ['METADATA']
 
-" Fugitive Shortcuts
-nmap <silent> <leader>gs :Gstatus<cr>
-nmap <leader>ge :Gedit<cr>
-nmap <silent><leader>gr :Gread<cr>
-nmap <silent><leader>gw :Gwrite<cr>
-nmap <silent><leader>gb :Gblame<cr>
-nmap <silent><leader>gt :Gcommit<cr>
+" Use AG for CtrlP
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
 
-" GtImporter
-nnoremap <leader>vi :GtImporter<CR>
-nnoremap <leader>vs :GtImporterSort<CR>
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = '/usr/bin/ag %s -i --nocolor --nogroup --hidden
+    \ --ignore .git
+    \ --ignore .svn
+    \ --ignore .hg
+    \ --ignore .DS_Store
+    \ --ignore "**/*.pyc"
+    \ --ignore .git5_specs
+    \ --ignore review
+    \ -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 " Formatter
 nnoremap <leader>ff :FormatCode<CR>
@@ -89,25 +52,6 @@ let g:ctrlp_working_path_mode = 2
 " airline options
 let g:airline_powerline_fonts=1
 let g:airline_theme='base16'
-
-" Elm configs
-let g:elm_format_autosave = 1
-let g:elm_syntastic_show_warnings = 1
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-
-" C# configs
-let g:OmniSharp_server_type = 'roslyn'
-let g:OmniSharp_timeout = 1
-augroup omnisharp_commands
-    autocmd!
-
-    " Builds can also run asynchronously with vim-dispatch installed
-    autocmd FileType cs nnoremap <leader>b :wa!<cr>:OmniSharpBuildAsync<cr>
-
-    "show type information automatically when the cursor stops moving
-    autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
-augroup END
 
 " don't hide quotes in json files
 let g:vim_json_syntax_conceal = 0

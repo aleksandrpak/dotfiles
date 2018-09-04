@@ -53,8 +53,4 @@ for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 done
 
 # Weather
-alias wt="curl http://wttr.in/rotterdam"
-
-# Stuff I never really use but cannot delete either because of http://xkcd.com/530/
-alias stfu="osascript -e 'set volume output muted true'"
-alias pumpitup="osascript -e 'set volume 10'"
+alias wt="curl https://wttr.in/zurich\?m"

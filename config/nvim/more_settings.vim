@@ -6,14 +6,6 @@ if has('mouse')
     set mouse=a
 endif
 
-" folding in xml
-let g:xml_syntax_folding=1
-au FileType xml setlocal foldmethod=syntax
-
-" Building with neomake in background and displaying error
-" let g:neomake_echo_current_error=1
-" let g:neomake_verbose=0
-
 " file type specific settings
 if has('autocmd') && !exists('autocommands_loaded')
     let autocommands_loaded = 1
