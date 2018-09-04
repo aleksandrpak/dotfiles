@@ -12,7 +12,7 @@ source ~/.dotfiles/install/link.sh
 echo "creating temp vim directory"
 mkdir -p ~/.vim-tmp
 
-if [ "$( os_name )" == "OSX" ]
+if [ "$( uname )" == "Darwin" ]
 then
     echo "Running on OSX"
 
@@ -29,6 +29,13 @@ then
 
     echo "Configuring zsh as default shell"
     chsh -s $(which zsh)
+fi
+
+if [ "$( uname )" == "Linux" ]
+then
+  echo "Running on Linux"
+
+  source ~/.dotfiles/install/google.sh
 fi
 
 echo "Done."
