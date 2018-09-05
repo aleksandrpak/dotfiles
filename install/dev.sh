@@ -22,6 +22,3 @@ pip install future
 pip install six
 pip install websocket-client
 pip install grip
-
-# Installing vim bundles
-echo "iExecute :PlugInstall and close vim" | vim
