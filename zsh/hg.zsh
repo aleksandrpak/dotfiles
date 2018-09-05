@@ -1,0 +1,10 @@
+# hg aliases
+alias hs="hg status"
+alias hf="hd diff"
+alias ha="hg amend -i"
+alias hc="hg commit -i"
+alias hl="hg sync -a"
+alias hp="hg uploadall"
+alias hh="hg shelve"
+alias hu="hg unshelve"
+alias hx="hg xl"
