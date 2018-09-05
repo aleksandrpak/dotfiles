@@ -37,7 +37,7 @@ fi
 autoload -U compinit
 compinit
 
-export EDITOR='nvim'
+export EDITOR='vim'
 
 export PATH=/usr/local/bin:$PATH
 

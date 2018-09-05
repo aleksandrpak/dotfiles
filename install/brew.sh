@@ -12,7 +12,7 @@ get tmux
 get zsh-syntax-highlighting
 
 # Development
-get neovim/neovim/neovim
+get vim --with-override-system-vi
 
 # Dekstop
 get_desktop mattr-slate

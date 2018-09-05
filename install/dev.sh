@@ -23,6 +23,5 @@ pip install six
 pip install websocket-client
 pip install grip
 
-# Installing nvim bundles
-pip install neovim --upgrade
-echo "iExecute :PlugInstall and close vim" | nvim
+# Installing vim bundles
+echo "iExecute :PlugInstall and close vim" | vim
