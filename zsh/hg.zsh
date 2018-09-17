@@ -1,6 +1,6 @@
 # hg aliases
 alias hs="hg status"
-alias hf="hd diff"
+alias hf="hg diff"
 alias ha="hg amend -i"
 alias hc="hg commit -i"
 alias hl="hg sync -a"

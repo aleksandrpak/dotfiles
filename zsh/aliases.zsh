@@ -52,3 +52,5 @@ done
 
 # Weather
 alias wt="curl https://wttr.in/zurich\?m"
+
+alias git="~/.dotfiles/bin/git"

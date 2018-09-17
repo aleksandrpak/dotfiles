@@ -74,6 +74,7 @@ fi
 # For blaze
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+zstyle ':completion:*' users root $USER
 
 # Base16 Shell
 export THEME="base16-chalk"
