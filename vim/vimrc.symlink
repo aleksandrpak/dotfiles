@@ -5,8 +5,8 @@ if filereadable(expand('~/.at_google'))
 endif
 
 source ~/.dotfiles/vim/plugins.vim
-source ~/.dotfiles/vim/plugins_settings.vim
 source ~/.dotfiles/vim/settings.vim
+source ~/.dotfiles/vim/plugins_settings.vim
 source ~/.dotfiles/vim/more_settings.vim
 
 filetype plugin indent on

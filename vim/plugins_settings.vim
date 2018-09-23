@@ -40,7 +40,41 @@ nnoremap <leader>A :Ag <C-r><C-w><CR>
 let g:airline_powerline_fonts=1
 let g:airline_theme='base16'
 
-" Formatter (google?)
 if filereadable(expand('~/.at_google'))
+  " Formatter
   nnoremap <leader>ff :FormatCode<CR>
+
+  "let g:ycm_clangd_binary_path="/google/bin/releases/editor-devtools/ciderlsp"
+  if executable('/usr/bin/clangd')
+    au User lsp_setup call lsp#register_server({
+          \ 'name': 'clangd',
+          \ 'cmd': {server_info->['/usr/bin/clangd', '--index-service=blade:fozzie']},
+          \ 'whitelist': ['c', 'cpp'],
+          \ })
+  endif
 endif
+
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': ['go'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ }))
+
+" Async complete
+let g:asyncomplete_remove_duplicates = 1
+let g:asyncomplete_smart_completion = 1
+let g:asyncomplete_auto_popup = 1
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
