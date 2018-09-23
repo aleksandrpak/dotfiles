@@ -5,6 +5,10 @@
 if [[ $PWD =~ '^/google/src/' ]];then
     # return 1 so that git_prompt_info returns 0
     exit 1
+fi
+
+if [[ $(uname) == 'Darwin' ]]; then
+    exec /usr/bin/git "$@"
 else
     # get list of candidates, split into array
     local gits=("${(@s: :)$(whereis -b git)}")
