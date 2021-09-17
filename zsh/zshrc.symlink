@@ -1,3 +1,5 @@
+export TERMINAL=urxvtc
+
 export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
 
@@ -89,3 +91,18 @@ source $BASE16_SHELL
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 source ~/.dotfiles/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /etc/bash_completion.d/hgd
+
+# TODO: extract to functions
+alias pastebin="/google/src/head/depot/eng/tools/pastebin"
+alias bison-cplan=/google/data/ro/teams/search-capacity/bison-cplan/live/bison-cplan
+# Allow Ctrl-z to toggle between suspend and resume 
+function Resume {
+    fg
+    zle push-input
+    BUFFER=""
+    zle accept-line
+}
+
+zle -N Resume
+bindkey "^Z" Resume
