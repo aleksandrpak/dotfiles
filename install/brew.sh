@@ -11,8 +11,8 @@ get tmux
 get zsh-syntax-highlighting
 
 # Development
-get vim --with-override-system-vi
+get vim
 
 # Font setup
-get_desktop caskroom/fonts/font-hack
+get_desktop homebrew/cask-fonts/font-hack
 get_desktop font-droid-sans-mono-for-powerline
