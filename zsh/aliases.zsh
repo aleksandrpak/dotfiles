@@ -8,6 +8,8 @@ else # OS X `ls`
     colorflag="-G"
 fi
 
+alias sp='span sql --max_value_lines=50 --dml_concurrency=partitioned_non_atomic --op_deadline=7200 --op_traffic_class=AF2 --query_max_staleness=600'
+
 # Filesystem aliases
 alias ..='cd ..'
 alias ...='cd ../..'

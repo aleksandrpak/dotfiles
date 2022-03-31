@@ -11,7 +11,7 @@ augroup END
 " CtrlP configs
 let g:ctrlp_map='<leader>t'
 nnoremap <leader>r :CtrlPBuffer<CR>
-let g:ctrlp_root_markers = ['METADATA']
+let g:ctrlp_root_markers = ['METADATA', 'BUILD']
 
 " Use AG for CtrlP
 if executable('ag')
@@ -70,11 +70,20 @@ call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options
     \ 'completor': function('asyncomplete#sources#buffer#completor'),
     \ }))
 
+call asyncomplete#register_source(asyncomplete#sources#gocode#get_source_options({
+    \ 'name': 'gocode',
+    \ 'whitelist': ['go'],
+    \ 'completor': function('asyncomplete#sources#gocode#completor'),
+    \ }))
+
 " Async complete
 let g:asyncomplete_remove_duplicates = 1
-let g:asyncomplete_smart_completion = 1
-let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_popup = 0
+let g:asyncomplete_smart_completion = 0
+let g:asyncomplete_force_refresh_on_context_changed = 0
 
+imap <C-@> <Plug>(asyncomplete_force_refresh)
+imap <C-space> <Plug>(asyncomplete_force_refresh)
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"

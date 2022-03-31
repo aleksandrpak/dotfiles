@@ -3,7 +3,6 @@
 echo "Installing homebrew packages..."
 
 # # CLI
-get reattach-to-user-namespace
 get tree
 get ag
 get wget
