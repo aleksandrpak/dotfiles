@@ -10,8 +10,7 @@ mkdir -p ~/Projects/gocode
 
 # Installing python
 get python
-pip install --upgrade pip
-pip install future
-pip install six
-pip install websocket-client
-pip install grip
+pip3 install future
+pip3 install six
+pip3 install websocket-client
+pip3 install grip
