@@ -10,7 +10,7 @@ source ~/.dotfiles/install/functions.sh
 source ~/.dotfiles/install/link.sh
 
 echo "creating temp vim directory"
-mkdir -p ~/.vim-tmp
+mkdir -p ~/.tmp
 
 if [ "$( uname )" == "Darwin" ]
 then
