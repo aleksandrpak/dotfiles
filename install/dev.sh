@@ -4,9 +4,6 @@
 curl https://sh.rustup.rs -sSf | sh
 rustup component add rust-src
 
-# Installing Dart
-get dart --with-content-shell --with-dartium
-
 # Installing Go
 get go
 mkdir -p ~/Projects/gocode
