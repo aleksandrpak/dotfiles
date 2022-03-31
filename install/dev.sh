@@ -10,7 +10,6 @@ mkdir -p ~/Projects/gocode
 
 # Installing python
 get python
-get python3
 pip install --upgrade pip
 pip install future
 pip install six
