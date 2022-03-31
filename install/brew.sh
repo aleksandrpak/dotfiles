@@ -9,6 +9,7 @@ get wget
 get zsh
 get tmux
 get zsh-syntax-highlighting
+get svn
 
 # Development
 get vim
