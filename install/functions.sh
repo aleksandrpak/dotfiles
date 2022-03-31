@@ -31,7 +31,7 @@ osx_get_desktop() {
     then
         echo "$1 is already installed. skipping."
     else
-        brew cask install $*
+        brew install $* --cask
     fi
 }
 
