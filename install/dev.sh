@@ -3,7 +3,6 @@
 # Instaling Rust
 curl https://sh.rustup.rs -sSf | sh
 rustup component add rust-src
-cargo install rustfmt
 cargo install racer
 
 # Installing Dart
