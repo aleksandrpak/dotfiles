@@ -31,7 +31,7 @@ osx_get_desktop() {
     then
         echo "$1 is already installed. skipping."
     else
-        brew cask install $*
+        brew install $* --cask
     fi
 }
 
@@ -39,7 +39,7 @@ prepare_osx() {
     get_brew
 
     brew tap kevwil/patches
-    brew tap caskroom/cask
+    brew tap homebrew/cask
     brew tap dart-lang/dart
 }
 

@@ -9,13 +9,11 @@ get wget
 get zsh
 get tmux
 get zsh-syntax-highlighting
+get svn
 
 # Development
-get vim --with-override-system-vi
-
-# Dekstop
-get_desktop mattr-slate
+get vim
 
 # Font setup
-get_desktop caskroom/fonts/font-hack
+get_desktop homebrew/cask-fonts/font-hack
 get_desktop font-droid-sans-mono-for-powerline
