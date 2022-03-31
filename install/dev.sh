@@ -7,7 +7,6 @@ rustup component add rust-src
 # Installing Go
 get go
 mkdir -p ~/Projects/gocode
-go get -u github.com/nsf/gocode
 
 # Installing python
 get python
