@@ -5,7 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 if filereadable(expand('~/.at_google'))
-  Glug codefmt plugin[mappings] gofmt_executable="goimports"
+  Glug codefmt gofmt_executable="goimports"
   Glug codefmt-google
   Glug blazedeps auto_filetypes=`['go']`
 endif

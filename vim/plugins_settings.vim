@@ -5,8 +5,11 @@
 " Autoformat on save
 augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType go AutoFormatBuffer gofmt
+  " autocmd FileType go AutoFormatBuffer gofmt
 augroup END
+
+let g:go_fmt_autosave=0
+let g:go_imports_autosave=0
 
 " CtrlP configs
 let g:ctrlp_map='<leader>t'

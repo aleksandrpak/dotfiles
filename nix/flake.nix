@@ -23,11 +23,13 @@
       darwinConfigurations."personal-laptop" = nix-darwin.lib.darwinSystem {
         modules = [
           # Common
-          (import ./configuration.nix inputs)
+          (import ./common-conf.nix inputs)
           (import ./common-pkgs.nix inputs)
+          (import ./common-gui.nix inputs)
+          # Darwin
+          (import ./darwin-conf.nix inputs)
           home-manager.darwinModules.home-manager
           ./home.nix
-          # Darwin
           nix-homebrew.darwinModules.nix-homebrew
           ./homebrew.nix
           # Personal
@@ -45,15 +47,29 @@
       darwinConfigurations."corp-laptop" = nix-darwin.lib.darwinSystem {
         modules = [
           # Common
-          (import ./configuration.nix inputs)
+          (import ./common-conf.nix inputs)
           (import ./common-pkgs.nix inputs)
+          (import ./common-gui.nix inputs)
+          # Darwin
+          (import ./darwin-conf.nix inputs)
           home-manager.darwinModules.home-manager
           ./home.nix
-          # Darwin
           nix-homebrew.darwinModules.nix-homebrew
           ./homebrew.nix
           # Corp
           (import ./corp-dock.nix inputs)
+        ];
+      };
+
+      # Build darwin flake using:
+      # $ nixos-rebuild build --flake .#towelie.c.googlers.com
+      nixosConfigurations."towelie.c.googlers.com" = nixpkgs.lib.nixosSystem {
+        modules = [
+          # Common
+          (import ./common-conf.nix inputs)
+          (import ./common-pkgs.nix inputs)
+          # Linux
+          (import ./linux-conf.nix inputs)
         ];
       };
     };

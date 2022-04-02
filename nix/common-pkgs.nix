@@ -43,15 +43,5 @@
     eza
     bat
     oh-my-posh
-    # GUI
-    # TODO: add firefox
-    discord
-    obsidian
-    protonmail-bridge
-    vscode
-    ## MacOS only
-    raycast
-    stats
-    xcode-install
   ];
 }
