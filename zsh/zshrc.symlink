@@ -18,6 +18,10 @@ export PATH=$PATH:$GOPATH/bin
 # Rust variables
 export PATH=$PATH:~/.cargo/bin
 
+# Flutter
+export ANDROID_SDK_ROOT=~/Android/Sdk
+export ANDROID_HOME=~/Android/Sdk
+
 # display how long all tasks over 10 seconds take
 export REPORTTIME=10
 
