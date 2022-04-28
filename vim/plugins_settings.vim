@@ -40,9 +40,6 @@ nnoremap <leader>A :Ag <C-r><C-w><CR>
 let g:airline_powerline_fonts=1
 let g:airline_theme='base16'
 
-" Base16 options
-set termguicolors
-
 if filereadable(expand('~/.at_google'))
   " Formatter
   nnoremap <leader>ff :FormatCode<CR>
