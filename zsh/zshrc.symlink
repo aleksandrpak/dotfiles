@@ -99,7 +99,6 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 source $DOTFILES/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /etc/bash_completion.d/hgd
 
 [[ -e "/Users/alekspak/mdproxy/data/mdproxy_zshrc" ]] && source "/Users/alekspak/mdproxy/data/mdproxy_zshrc" # MDPROXY-ZSHRC
 

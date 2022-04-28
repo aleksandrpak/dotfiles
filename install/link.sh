@@ -22,7 +22,7 @@ if [ ! -d $HOME/.config ]; then
     mkdir -p $HOME/.config
 fi
 
-for config in $DOTFILES/config/*; do
+for config in $DOTFILES/.config/*; do
     target=$HOME/.config/$( basename $config )
     if [ -e $target ]; then
         echo "~${target#$HOME} already exists... Skipping."
