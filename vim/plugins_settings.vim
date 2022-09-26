@@ -19,7 +19,7 @@ if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = '/usr/bin/ag %s -i --nocolor --nogroup --hidden
+  let g:ctrlp_user_command = '/usr/local/bin/ag %s -i --nocolor --nogroup --hidden
         \ --ignore .git
         \ --ignore .svn
         \ --ignore .hg
@@ -41,7 +41,8 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='base16'
 
 " Base16 options
-set termguicolors
+" Needed when outside of ZSH
+" set termguicolors
 
 if filereadable(expand('~/.at_google'))
   " Formatter
