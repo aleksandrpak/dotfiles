@@ -43,7 +43,7 @@ let g:airline_theme='base16'
 " Base16 options
 " Needed when outside of ZSH
 " set termguicolors
-
+"
 if filereadable(expand('~/.at_google'))
   " Formatter
   nnoremap <leader>ff :FormatCode<CR>

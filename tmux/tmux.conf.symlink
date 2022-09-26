@@ -39,7 +39,7 @@ set-option -g set-titles-string "#T - #W"
 #### Key Bindings ####
 ######################
 
-bind-key -Tcopy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'v' send -X begin-selection
 
 # reload config file
 bind r source-file ~/.tmux.conf \; display "Config Reloaded!"
