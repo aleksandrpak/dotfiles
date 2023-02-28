@@ -5,11 +5,15 @@ export ZSH=$DOTFILES/zsh
 
 # bin paths
 export PATH=$PATH:~/.local/bin
+export PATH=/opt/homebrew/opt/ruby/bin:$PATH
 
 # Use openssl from brew
 export OPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include 
 export DEP_OPENSSL_INCLUDE=/usr/local/opt/openssl/include
 export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+
+# Node path
+export PATH=~/.npm-global/bin:$PATH
 
 # Golang variables
 export GOPATH=$HOME/Projects/gocode
@@ -19,8 +23,10 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:~/.cargo/bin
 
 # Flutter
-export ANDROID_SDK_ROOT=~/Android/Sdk
-export ANDROID_HOME=~/Android/Sdk
+export ANDROID_SDK_ROOT=~/Library/Android/sdk
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=$PATH:~/Library/Android/sdk/cmdline-tools/latest/bin
+export PATH=$PATH:~/.pub-cache/bin
 
 # display how long all tasks over 10 seconds take
 export REPORTTIME=10
@@ -87,22 +93,21 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 zstyle ':completion:*' users root $USER
 
-# Base16 Shell
-export THEME="base16-chalk"
-
 if [ -z "$BACKGROUND" ]; then
     export BACKGROUND="dark"
 fi
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-chalk.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# Base16 Shell
+export THEME="base16-chalk"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 source $DOTFILES/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /Library/GoogleCorpSupport/srcfs/shell_completion/enable_completion.sh
 
 [[ -e "/Users/alekspak/mdproxy/data/mdproxy_zshrc" ]] && source "/Users/alekspak/mdproxy/data/mdproxy_zshrc" # MDPROXY-ZSHRC
 
@@ -119,3 +124,9 @@ function Resume {
 
 zle -N Resume
 bindkey "^Z" Resume
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/alekspak/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/alekspak/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/alekspak/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/alekspak/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
