@@ -110,16 +110,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-chalk.dark.sh"
 # Base16 Shell
 export THEME="base16-chalk"
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 source $DOTFILES/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /Library/GoogleCorpSupport/srcfs/shell_completion/enable_completion.sh
 
 [[ -e "/Users/alekspak/mdproxy/data/mdproxy_zshrc" ]] && source "/Users/alekspak/mdproxy/data/mdproxy_zshrc" # MDPROXY-ZSHRC
 
-# TODO: extract to functions
-alias pastebin="/google/src/head/depot/eng/tools/pastebin"
-alias bison-cplan=/google/data/ro/teams/search-capacity/bison-cplan/live/bison-cplan
 # Allow Ctrl-z to toggle between suspend and resume 
 function Resume {
     fg
