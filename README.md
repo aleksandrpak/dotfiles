@@ -60,3 +60,22 @@ Some of the procedures are still required automation:
 * iTerm2 -> Profiles -> Advanced -> Triggers -> pomo + ' ' + finished (Show alert, instant)
 * iTerm2 -> Install Shell Integration
 * Alfred, 1password, Magnet
+
+
+
+## Nix
+
+Install Nix:
+```shell
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
+
+Test that it works:
+```shell
+nix run "nixpkgs#hello"
+```
+
+You might need to change owner of the ~/.cache/nix
+```shell
+sudo chown $(whoami):$(groups | awk '{print $1}') ~/.cache/nix
+```
