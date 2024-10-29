@@ -65,6 +65,7 @@
             pkgs.protonmail-bridge
             pkgs.vscode
             ## MacOS only
+            # TODO: Delete when wezterm is good
             pkgs.iterm2
             pkgs.raycast
             pkgs.stats
@@ -88,6 +89,7 @@
               "termius"
               "the-unarchiver"
               "ticktick"
+              "wezterm@nightly"
               "windows-app" # TODO: Do not install on corp
             ];
             masApps = {
@@ -122,6 +124,36 @@
             dock.autohide = true;
             # Don't arrange spaces based on latest usage
             dock.mru-spaces = false;
+            dock.persistent-apps = [
+              "/Applications/Safari.app"
+              "/Applications/WezTerm.app"
+              "${pkgs.vscode}/Applications/Visual Studio Code.app"
+              "${pkgs.obsidian}/Applications/Obsidian.app"
+              "/Applications/Telegram.app"
+              "/Applications/TickTick.app"
+              "/System/Applications/System Settings.app"
+            ];
+            # Disable guest login
+            loginwindow.GuestEnabled = false;
+            # Use F1, F2, etc. keys as standard function keys
+            NSGlobalDomain."com.apple.keyboard.fnState" = true;
+            # Whether to use 24-hour or 12-hour time
+            NSGlobalDomain.AppleICUForce24HourTime = true;
+            # Disable press-and-hold for keys in favor of key repeat
+            NSGlobalDomain.ApplePressAndHoldEnabled = false;
+            # The key’s character begins to repeat
+            NSGlobalDomain.InitialKeyRepeat = 15;
+            # Keyboard repeat rate
+            NSGlobalDomain.KeyRepeat = 2;
+            NSGlobalDomain.AppleInterfaceStyle = "Dark";
+            # Whether to allow quitting of the Finder
+            finder.QuitMenuItem = true;
+            # Whether to always show file extensions
+            finder.AppleShowAllExtensions = true;
+            finder.ShowPathbar = true;
+            finder.ShowStatusBar = true;
+            # Tap to click
+            trackpad.Clicking = true;
           };
 
           # Use fingerprint for sudo

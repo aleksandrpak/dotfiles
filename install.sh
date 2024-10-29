@@ -6,7 +6,6 @@ echo "Initializing submodule(s)"
 cd ~/.dotfiles
 git submodule update --init --recursive
 
-source ~/.dotfiles/install/functions.sh
 source ~/.dotfiles/install/link.sh
 
 echo "creating temp vim directory"
@@ -15,8 +14,6 @@ mkdir -p ~/.tmp
 if [ "$( uname )" == "Darwin" ]
 then
     echo "Running on OSX"
-
-    prepare_osx
 
     echo "Installing Nix"
     source ~/.dotfiles/install/nix.sh

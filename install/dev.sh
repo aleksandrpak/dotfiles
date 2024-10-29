@@ -1,15 +1,9 @@
 #!/bin/sh
 
-# Instaling Rust
-curl https://sh.rustup.rs -sSf | sh
-rustup component add rust-src
-
-# Installing Go
-get go
+# Go projects dir
 mkdir -p ~/Projects/gocode
 
 # Installing python
-get python
 pip3 install future
 pip3 install six
 pip3 install websocket-client
