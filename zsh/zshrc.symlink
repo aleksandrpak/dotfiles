@@ -110,7 +110,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-chalk.dark.sh"
 # Base16 Shell
 export THEME="base16-chalk"
 
-source $DOTFILES/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 [[ -e "/Users/alekspak/mdproxy/data/mdproxy_zshrc" ]] && source "/Users/alekspak/mdproxy/data/mdproxy_zshrc" # MDPROXY-ZSHRC
 

@@ -18,9 +18,6 @@ then
     echo "Installing Nix"
     source ~/.dotfiles/install/nix.sh
 
-    echo "Updating OSX settings"
-    source ~/.dotfiles/install/osx.sh
-
     echo "Downloading development tools"
     source ~/.dotfiles/install/dev.sh
 

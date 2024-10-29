@@ -6,6 +6,8 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -13,6 +15,7 @@
       self,
       nix-darwin,
       nix-homebrew,
+      home-manager,
       nixpkgs,
     }:
     let
@@ -20,56 +23,60 @@
         { pkgs, ... }:
         {
           # Options at http://mynixos.com
+          users.users.alekspak = {
+            name = "alekspak";
+            home = "/Users/alekspak";
+          };
 
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
-          environment.systemPackages = [
+          environment.systemPackages = with pkgs; [
             # Development
             ## Nix
-            pkgs.nixd
-            pkgs.nixfmt-rfc-style
+            nixd
+            nixfmt-rfc-style
             ## Go
-            pkgs.go
+            go
             ## Rust
-            pkgs.rustup
+            rustup
             ## Python
-            pkgs.python3
+            python3
             ## Flutter
-            pkgs.flutter
+            flutter
             ## IDE
-            pkgs.vim
-            pkgs.neovim
+            vim
+            neovim
             ## Virtual environment
-            pkgs.docker
+            docker
             ## Version control
-            pkgs.gh
+            gh
             # Personal
-            pkgs.beancount
-            pkgs.fava
+            beancount
+            fava
             # System tools
-            pkgs.e2fsprogs
-            pkgs.ffmpeg
-            pkgs.file
-            pkgs.silver-searcher
-            pkgs.tmux
-            pkgs.tree
-            pkgs.wget
-            pkgs.zsh
-            pkgs.zsh-syntax-highlighting
+            e2fsprogs
+            ffmpeg
+            file
+            silver-searcher
+            tmux
+            tree
+            wget
+            zsh
+            zsh-syntax-highlighting
             # Fonts
             # GUI
-            # TODO: add pkgs.firefox
-            pkgs.discord
-            pkgs.google-chrome
-            pkgs.obsidian
-            pkgs.protonmail-bridge
-            pkgs.vscode
+            # TODO: add firefox
+            discord
+            google-chrome
+            obsidian
+            protonmail-bridge
+            vscode
             ## MacOS only
             # TODO: Delete when wezterm is good
-            pkgs.iterm2
-            pkgs.raycast
-            pkgs.stats
-            pkgs.xcode-install
+            iterm2
+            raycast
+            stats
+            xcode-install
           ];
 
           homebrew = {
@@ -83,6 +90,7 @@
             casks = [
               "proton-pass"
               "protonvpn"
+              "shortcutdetective"
               "steam"
               "tailscale" # TODO: Do not install on corp
               "telegram"
@@ -124,6 +132,8 @@
             dock.autohide = true;
             # Don't arrange spaces based on latest usage
             dock.mru-spaces = false;
+            # Reduce desktop switching animation time
+            dock.expose-animation-duration = 0.0;
             dock.persistent-apps = [
               "/Applications/Safari.app"
               "/Applications/WezTerm.app"
@@ -139,6 +149,10 @@
             NSGlobalDomain."com.apple.keyboard.fnState" = true;
             # Whether to use 24-hour or 12-hour time
             NSGlobalDomain.AppleICUForce24HourTime = true;
+            # Reduce window resize time
+            NSGlobalDomain.NSWindowResizeTime = 1.0e-3;
+            # Enable full keyboard access for all controls
+            NSGlobalDomain.AppleKeyboardUIMode = 3;
             # Disable press-and-hold for keys in favor of key repeat
             NSGlobalDomain.ApplePressAndHoldEnabled = false;
             # The key’s character begins to repeat
@@ -146,10 +160,16 @@
             # Keyboard repeat rate
             NSGlobalDomain.KeyRepeat = 2;
             NSGlobalDomain.AppleInterfaceStyle = "Dark";
+            # Enable subpixel font rendering on non-Apple LCDs
+            NSGlobalDomain.AppleFontSmoothing = 2;
+            # Expand save dialog by default
+            NSGlobalDomain.NSNavPanelExpandedStateForSaveMode = true;
             # Whether to allow quitting of the Finder
             finder.QuitMenuItem = true;
             # Whether to always show file extensions
             finder.AppleShowAllExtensions = true;
+            # Use current directory as default search scope in Finder
+            finder.FXDefaultSearchScope = "SCcf";
             finder.ShowPathbar = true;
             finder.ShowStatusBar = true;
             # Tap to click
@@ -172,8 +192,27 @@
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#personal
       darwinConfigurations."personal" = nix-darwin.lib.darwinSystem {
-        modules = [ 
+        modules = [
           configuration
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.users.alekspak = {
+              targets.darwin.defaults."com.apple.desktopservices".DSDontWriteNetworkStores = true;
+
+              # This value determines the Home Manager release that your configuration is
+              # compatible with. This helps avoid breakage when a new Home Manager release
+              # introduces backwards incompatible changes.
+              #
+              # You should not change this value, even if you update Home Manager. If you do
+              # want to update the value, then make sure to first check the Home Manager
+              # release notes.
+              home.stateVersion = "24.11";
+
+              # Let Home Manager install and manage itself.
+              programs.home-manager.enable = true; # Please read the comment before changing.
+            };
+          }
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
