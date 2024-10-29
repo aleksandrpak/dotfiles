@@ -34,12 +34,6 @@ ZSH is configured in the `zshrc.symlink` file, which will be symlinked to the ho
 * Set the base16 colorscheme to use for both the terminal (iTerm2) and vim by exporting the `$THEME` and `$BACKGROUND` environment variables
 * And more...
 
-## Fonts
-
-I am currently using [Hack](http://sourcefoundry.org/hack/) as my default font, which does include Powerline support, so you don't need an additional patched font. In addition to this, I do have [nerd-fonts](https://github.com/ryanoasis/nerd-fonts) installed and configured to be used for non-ascii characters. If you would prefer not to do this, then simply remove the `Plug 'ryanoasis/vim-devicons'` plugin from vim. Then, I configure the fonts in this way in iTerm2:
-
-![](iterm-fonts-config.png)
-
 ## Things to automate in OSX
 
 Some of the procedures are still required automation:
@@ -59,23 +53,3 @@ Some of the procedures are still required automation:
 * iTerm Preferences -> Profiles -> Window -> Style: No Title Bar
 * iTerm2 -> Profiles -> Advanced -> Triggers -> pomo + ' ' + finished (Show alert, instant)
 * iTerm2 -> Install Shell Integration
-* Alfred, 1password, Magnet
-
-
-
-## Nix
-
-Install Nix:
-```shell
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
-```
-
-Test that it works:
-```shell
-nix run "nixpkgs#hello"
-```
-
-You might need to change owner of the ~/.cache/nix
-```shell
-sudo chown $(whoami):$(groups | awk '{print $1}') ~/.cache/nix
-```

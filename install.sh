@@ -18,8 +18,8 @@ then
 
     prepare_osx
 
-    echo "Brewing all the things"
-    source ~/.dotfiles/install/brew.sh
+    echo "Installing Nix"
+    source ~/.dotfiles/install/nix.sh
 
     echo "Updating OSX settings"
     source ~/.dotfiles/install/osx.sh
