@@ -31,3 +31,6 @@ for config in $DOTFILES/config/*; do
         ln -s $config $target
     fi
 done
+
+# Custom symlinks
+ln -f ~/.dotfiles/tmux/tpm ~/.tmux/plugins/tpm

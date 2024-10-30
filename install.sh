@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Print all commands except echo
+set -x
+exec 2> >(grep -v '^\+ echo')
+
 echo "Installing dotfiles"
 
 echo "Initializing submodule(s)"
@@ -11,22 +15,20 @@ source ~/.dotfiles/install/link.sh
 echo "creating temp vim directory"
 mkdir -p ~/.tmp
 
-if [ "$( uname )" == "Darwin" ]
-then
-    echo "Running on OSX"
+echo "creating Go projects directory"
+mkdir -p ~/Projects/gocode
 
-    echo "Installing Nix"
-    source ~/.dotfiles/install/nix.sh
+if [ "$(uname)" == "Darwin" ]; then
+  echo "Running on OSX"
 
-    echo "Downloading development tools"
-    source ~/.dotfiles/install/dev.sh
+  echo "Installing Nix"
+  source ~/.dotfiles/install/nix.sh
 
-    echo "Configuring zsh as default shell"
-    chsh -s $(which zsh)
+  echo "Configuring zsh as default shell"
+  chsh -s $(which zsh)
 fi
 
-if [ "$( uname )" == "Linux" ]
-then
+if [ "$(uname)" == "Linux" ]; then
   echo "Running on Linux"
 
   source ~/.dotfiles/install/google.sh
