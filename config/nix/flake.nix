@@ -50,9 +50,6 @@
             docker
             ## Version control
             gh
-            # Personal
-            beancount
-            fava
             # System tools
             e2fsprogs
             ffmpeg
