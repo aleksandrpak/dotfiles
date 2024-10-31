@@ -12,6 +12,3 @@ zstyle ':completion:*' menu no
 
 # pasting with tabs doesn't perform completion
 zstyle ':completion:*' insert-tab pending
-
-# completion preview
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'

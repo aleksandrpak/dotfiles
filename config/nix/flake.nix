@@ -53,17 +53,24 @@
             ## Version control
             git
             gh
+            delta
             # System tools
+            btop
             e2fsprogs
             ffmpeg
             file
+            fx
             silver-searcher
+            tldr
             tmux
             tree
             wget
             ## ZSH
             zsh
             fzf
+            fd
+            eza
+            bat
             oh-my-posh
             # GUI
             # TODO: add firefox

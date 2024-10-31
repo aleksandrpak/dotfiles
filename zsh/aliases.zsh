@@ -1,21 +1,14 @@
 # reload zsh config
 alias reload='source ~/.zshrc'
 
-# Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
-    colorflag="--color"
-else # OS X `ls`
-    colorflag="-G"
-fi
-
 # Filesystem aliases
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias l="ls -lah ${colorflag}"
-alias ls='ls ${colorflag}'
+alias l="eza --icons=always --color=always --long --no-user --no-time --no-permissions --no-filesize"
+alias ls="eza --icons=always --color=always --long --git"
 
 # Helpers
 alias xx="exit"

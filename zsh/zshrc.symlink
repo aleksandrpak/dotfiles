@@ -37,14 +37,17 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
         source "$BASE16_SHELL/profile_helper.sh"
         
 if [ "$BACKGROUND" = "dark" ]; then
-    printf "\033]1337;SetUserVar=%s=%s\007" theme `echo -n dark | base64`
+    wezterm_set_user_var "theme" "dark"
     base16_dracula
     export THEME="base16-dracula"
+    export BAT_THEME="Dracula"
 elif [ "$BACKGROUND" = "light" ]; then
-    printf "\033]1337;SetUserVar=%s=%s\007" theme `echo -n light | base64`
+    wezterm_set_user_var "theme" "light"
     base16_cupertino
     export THEME="base16-cupertino"
+    export BAT_THEME="Colddark-Cold"
 fi
+
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -62,7 +65,10 @@ zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
+zinit snippet OMZP::command-not-found
 zinit snippet OMZP::git
+zinit snippet OMZP::ssh
+zinit snippet https://raw.githubusercontent.com/junegunn/fzf-git.sh/refs/heads/main/fzf-git.sh
 
 # Load completions
 autoload -Uz compinit && compinit

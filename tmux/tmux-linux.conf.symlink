@@ -1,2 +1,1 @@
 set -s copy-command 'wl-copy'
-set -g default-command /usr/bin/zsh
