@@ -1,33 +1,41 @@
+# normal priority for background jobs
 setopt NO_BG_NICE
+# don't send ^c to background jobs on shell exit
 setopt NO_HUP
-setopt NO_LIST_BEEP
+# no beeping on ambigious completions
+setopt NO_BEEP
+# options are local to function
 setopt LOCAL_OPTIONS
+# traps are local to function
 setopt LOCAL_TRAPS
-setopt PROMPT_SUBST
-
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-
-# history
-setopt HIST_VERIFY
-setopt EXTENDED_HISTORY
-setopt HIST_REDUCE_BLANKS
-setopt SHARE_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt INC_APPEND_HISTORY SHARE_HISTORY
-setopt APPEND_HISTORY
-
+# aliases are treated as normal commands for completion
 setopt COMPLETE_ALIASES
 
-# make terminal command navigation sane again
-bindkey '^[^[[D' backward-word
-bindkey '^[^[[C' forward-word
-bindkey '^[[5D' beginning-of-line
-bindkey '^[[5C' end-of-line
-bindkey '^[[3~' delete-char
-bindkey '^?' backward-delete-char
+# history
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+
+# always append history
+setopt APPEND_HISTORY
+# share history between sessions
+setopt SHARE_HISTORY
+# save timestamps and durations
+setopt EXTENDED_HISTORY
+# don't execute after selection in history
+setopt HIST_VERIFY
+# trim saved commands
+setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_FIND_NO_DUPS
+
+bindkey -e
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 bindkey '^r' history-incremental-search-backward
 
-fpath=($ZSH/functions $fpath)
-autoload -U $ZSH/functions/*(:t)
+# display how long all tasks over 10 seconds take
+export REPORTTIME=10

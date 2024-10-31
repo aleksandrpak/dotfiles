@@ -41,6 +41,8 @@
             rustup
             ## Python
             python3
+            ## Java
+            zulu
             ## Flutter
             flutter
             ## IDE
@@ -49,6 +51,7 @@
             ## Virtual environment
             docker
             ## Version control
+            git
             gh
             # System tools
             e2fsprogs
@@ -58,9 +61,10 @@
             tmux
             tree
             wget
+            ## ZSH
             zsh
-            zsh-syntax-highlighting
-            # Fonts
+            fzf
+            oh-my-posh
             # GUI
             # TODO: add firefox
             discord

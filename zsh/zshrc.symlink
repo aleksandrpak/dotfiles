@@ -7,33 +7,9 @@ fi
 export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
 
-# bin paths
-export PATH=$PATH:~/.local/bin
-export PATH=$PATH:/usr/local/bin
-export PATH=$PATH:$DOTFILES/bin
-export PATH=$PATH:/usr/local/sbin
-export PATH=$PATH:~/bin
-
-# Golang variables
-export GOPATH=$HOME/Projects/gocode
-export PATH=$PATH:$GOPATH/bin
-
-# Rust variables
-export PATH=$PATH:~/.cargo/bin
-
-# Flutter
-export ANDROID_SDK_ROOT=~/Library/Android/sdk
-export ANDROID_HOME=~/Library/Android/sdk
-export PATH=$PATH:~/Library/Android/sdk/cmdline-tools/latest/bin
-export PATH=$PATH:~/.pub-cache/bin
-
-# display how long all tasks over 10 seconds take
-export REPORTTIME=10
-
 [[ -e ~/.terminfo ]] && export TERMINFO_DIRS=~/.terminfo:/usr/share/terminfo
 
 # define the Projects directory
-# This is where my code exists and where I want the `c` autocomplete to work from exclusively
 if [[ -d ~/Projects ]]; then
     export CODE_DIR=~/Projects
 fi
@@ -45,37 +21,10 @@ if [[ -a ~/.localrc ]]; then
     source ~/.localrc
 fi
 
-# initialize autocomplete
-autoload -U compinit
-compinit
-
 export EDITOR='nvim'
+alias vim="nvim"
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
-
-# alias git to hub
-if hash hub 2>/dev/null; then
-    eval "$(hub alias -s)"
-fi
-
-# g4d completions
-if [[ -a /etc/bash_completion.d/g4d ]]; then
-    source /etc/bash_completion.d/g4d
-fi
-
-if [[ -a /etc/bash_completion.d/hgd ]]; then
-    source /etc/bash_completion.d/hgd
-fi
-
-# hi zsh
-if [[ -a /etc/bash.bashrc.d/shell_history_forwarder.sh ]]; then
-    source /etc/bash.bashrc.d/shell_history_forwarder.sh
-fi
-
-# For blaze
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
-zstyle ':completion:*' users root $USER
 
 if [ -z "$BACKGROUND" ]; then
     export BACKGROUND="dark"
@@ -89,17 +38,41 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
         
 if [ "$BACKGROUND" = "dark" ]; then
     printf "\033]1337;SetUserVar=%s=%s\007" theme `echo -n dark | base64`
-    base16_chalk
-    export THEME="base16-chalk"
+    base16_dracula
+    export THEME="base16-dracula"
 elif [ "$BACKGROUND" = "light" ]; then
     printf "\033]1337;SetUserVar=%s=%s\007" theme `echo -n light | base64`
     base16_cupertino
     export THEME="base16-cupertino"
 fi
 
-source $HOME/.config/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Set the directory we want to store zinit and plugins
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
-[[ -e "/Users/alekspak/mdproxy/data/mdproxy_zshrc" ]] && source "/Users/alekspak/mdproxy/data/mdproxy_zshrc" # MDPROXY-ZSHRC
+# Download Zinit, if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+source "${ZINIT_HOME}/zinit.zsh"
+
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+zinit snippet OMZP::git
+
+# Load completions
+autoload -Uz compinit && compinit
+
+zinit cdreplay -q
+
+# Runs before each prompt rendering
+function precmd() {
+    export BG_JOBS=$(jobs|wc -l|xargs)
+}
 
 # Allow Ctrl-z to toggle between suspend and resume 
 function Resume {
@@ -112,8 +85,5 @@ function Resume {
 zle -N Resume
 bindkey "^Z" Resume
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/alekspak/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/alekspak/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/alekspak/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/alekspak/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+eval "$(fzf --zsh)"
+eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.toml)"

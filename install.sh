@@ -12,11 +12,14 @@ git submodule update --init --recursive
 
 source ~/.dotfiles/install/link.sh
 
-echo "creating temp vim directory"
+echo "Creating temp vim directory"
 mkdir -p ~/.tmp
 
-echo "creating Go projects directory"
+echo "Creating Go projects directory"
 mkdir -p ~/Projects/gocode
+
+echo "Creating ZSH cache directory"
+mkdir -p ~/.zsh/cache
 
 if [ "$(uname)" == "Darwin" ]; then
   echo "Running on OSX"
