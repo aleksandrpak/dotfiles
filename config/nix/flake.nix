@@ -81,7 +81,6 @@
             vscode
             ## MacOS only
             # TODO: Delete when wezterm is good
-            iterm2
             raycast
             stats
             xcode-install
