@@ -30,61 +30,67 @@
 
           # List packages installed in system profile. To search by name, run:
           # $ nix-env -qaP | grep wget
-          environment.systemPackages = with pkgs; [
-            # Development
-            ## Nix
-            nixd
-            nixfmt-rfc-style
-            ## Go
-            go
-            ## Rust
-            rustup
-            ## Python
-            python3
-            ## Java
-            zulu
-            ## Flutter
-            flutter
-            ## IDE
-            vim
-            neovim
-            ## Virtual environment
-            docker
-            ## Version control
-            git
-            gh
-            delta
-            # System tools
-            btop
-            e2fsprogs
-            ffmpeg
-            file
-            fx
-            silver-searcher
-            tldr
-            tmux
-            tree
-            wget
-            ## ZSH
-            zsh
-            fzf
-            fd
-            eza
-            bat
-            oh-my-posh
-            # GUI
-            # TODO: add firefox
-            discord
-            google-chrome
-            obsidian
-            protonmail-bridge
-            vscode
-            ## MacOS only
-            # TODO: Delete when wezterm is good
-            raycast
-            stats
-            xcode-install
-          ];
+          environment.systemPackages =
+            with pkgs;
+            [
+              # Development
+              ## Nix
+              nixd
+              nixfmt-rfc-style
+              ## Go
+              go
+              ## Rust
+              rustup
+              ## Python
+              python3
+              ## IDE
+              vim
+              neovim
+              ## Version control
+              gh
+              delta
+              # System tools
+              btop
+              e2fsprogs
+              ffmpeg
+              file
+              fx
+              silver-searcher
+              tldr
+              tmux
+              tree
+              wget
+              ## ZSH
+              zsh
+              fzf
+              fd
+              eza
+              bat
+              oh-my-posh
+              # GUI
+              # TODO: add firefox
+              discord
+              obsidian
+              protonmail-bridge
+              vscode
+              ## MacOS only
+              raycast
+              stats
+              xcode-install
+            ]
+            ++ (import ./google.nix).emptyGoogleList [
+              # Development
+              ## Version control
+              git
+              ## Virtual environment
+              docker
+              ## Java
+              zulu
+              ## Flutter
+              flutter
+              # GUI
+              google-chrome
+            ];
 
           homebrew = {
             enable = true;
@@ -94,19 +100,21 @@
             brews = [
               "mas"
             ];
-            casks = [
-              "proton-pass"
-              "protonvpn"
-              "shortcutdetective"
-              "steam"
-              "tailscale" # TODO: Do not install on corp
-              "telegram"
-              "termius"
-              "the-unarchiver"
-              "ticktick"
-              "wezterm@nightly"
-              "windows-app" # TODO: Do not install on corp
-            ];
+            casks =
+              [
+                "proton-pass"
+                "protonvpn"
+                "steam"
+                "telegram"
+                "the-unarchiver"
+                "ticktick"
+                "wezterm@nightly"
+              ]
+              ++ (import ./google.nix).emptyGoogleList [
+                "termius"
+                "tailscale"
+                "windows-app"
+              ];
             masApps = {
               "DarkReader" = 1438243180;
               "Infuse" = 1136220934;
@@ -184,7 +192,7 @@
           };
 
           # Use fingerprint for sudo
-          security.pam.enableSudoTouchIdAuth = true;
+          security.pam.enableSudoTouchIdAuth = !(import ./google.nix).atGoogle;
 
           # Used for backwards compatibility, please read the changelog before changing.
           # $ darwin-rebuild changelog
@@ -202,44 +210,28 @@
         modules = [
           configuration
           home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.users.alekspak = {
-              targets.darwin.defaults."com.apple.desktopservices".DSDontWriteNetworkStores = true;
-
-              # This value determines the Home Manager release that your configuration is
-              # compatible with. This helps avoid breakage when a new Home Manager release
-              # introduces backwards incompatible changes.
-              #
-              # You should not change this value, even if you update Home Manager. If you do
-              # want to update the value, then make sure to first check the Home Manager
-              # release notes.
-              home.stateVersion = "24.11";
-
-              # Let Home Manager install and manage itself.
-              programs.home-manager.enable = true; # Please read the comment before changing.
-            };
-          }
+          ./home.nix
           nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              # Install Homebrew under the default prefix
-              enable = true;
-
-              # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
-              enableRosetta = true;
-
-              # User owning the Homebrew prefix
-              user = "alekspak";
-
-              # Automatically migrate existing Homebrew installations
-              autoMigrate = true;
-            };
-          }
+          ./homebrew.nix
         ];
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."personal-laptop".pkgs;
+      # darwinPackages = self.darwinConfigurations."personal-laptop".pkgs;
+
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#corp-laptop
+      darwinConfigurations."corp-laptop" = nix-darwin.lib.darwinSystem {
+        modules = [
+          configuration
+          home-manager.darwinModules.home-manager
+          ./home.nix
+          nix-homebrew.darwinModules.nix-homebrew
+          ./homebrew.nix
+        ];
+      };
+
+      # Expose the package set, including overlays, for convenience.
+      # darwinPackages = self.darwinConfigurations."personal-laptop".pkgs;
     };
 }

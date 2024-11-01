@@ -12,10 +12,9 @@ exec 2> >(grep -v '^\+ echo')
 echo "Updating git submodules"
 
 git submodule update --remote --merge
-cd ~/.config/nix
 
 echo "Updating flake"
 
 if [ "$(uname)" == "Darwin" ]; then
-    darwin-rebuild switch --flake .
+    darwin-rebuild switch --flake ~/.dotfiles/nix
 fi
