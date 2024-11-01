@@ -197,8 +197,8 @@
     in
     {
       # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#personal
-      darwinConfigurations."personal" = nix-darwin.lib.darwinSystem {
+      # $ darwin-rebuild build --flake .#personal-laptop
+      darwinConfigurations."personal-laptop" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
           home-manager.darwinModules.home-manager
@@ -240,6 +240,6 @@
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."personal".pkgs;
+      darwinPackages = self.darwinConfigurations."personal-laptop".pkgs;
     };
 }
