@@ -230,8 +230,5 @@
           ./homebrew.nix
         ];
       };
-
-      # Expose the package set, including overlays, for convenience.
-      # darwinPackages = self.darwinConfigurations."personal-laptop".pkgs;
     };
 }
