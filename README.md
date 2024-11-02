@@ -21,6 +21,3 @@ Some of the procedures are still required automation:
 * System Preferences -> Keyboard -> Shortcuts -> Mission Control: Disable F11, F12
 * System Preferences -> Keyboard -> Shortcuts -> Mission Control -> Enable shortcuts for desktops
 * Finder -> Preferences -> New Finder Window show: Downloads
-* Launch iTerm: iTerm top menu -> Make iTerm2 default Term
-* iTerm Preferences -> Profiles -> Window -> Style: No Title Bar
-* iTerm2 -> Install Shell Integration
