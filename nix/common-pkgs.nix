@@ -14,9 +14,16 @@
     rustup
     ## Python
     python3
+    ## Lua
+    lua
+    ## Web
+    nodejs_22
     ## IDE
     vim
     neovim
+    ripgrep
+    gnumake
+    gcc
     ## Version control
     gh
     delta
@@ -26,10 +33,8 @@
     ffmpeg
     file
     fx
-    silver-searcher
     tldr
     tmux
-    tree
     wget
     ## ZSH
     zsh

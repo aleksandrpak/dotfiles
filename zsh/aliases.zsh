@@ -8,7 +8,12 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 alias l="eza --icons=always --color=always --long --no-user --no-time --no-permissions --no-filesize"
-alias ls="eza --icons=always --color=always --long --git"
+alias ls="eza --icons=always --color=always --long --git -a"
+alias tree="eza --tree --icons=always"
+alias trees="eza --tree --icons=always --level=2"
+
+# search hidden
+alias rg='rg --hidden'
 
 # Helpers
 alias xx="exit"
