@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs; [
     # Development
     ## Nix
-    nixd
     nixfmt-rfc-style
     ## Go
     go

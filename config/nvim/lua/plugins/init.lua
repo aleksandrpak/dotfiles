@@ -2,6 +2,7 @@ return {
     { "nvim-neotest/nvim-nio" },
     { "mfussenegger/nvim-dap" },
     { "jay-babu/mason-nvim-dap.nvim" },
+    { "sindrets/diffview.nvim" },
     {
         "rcarriga/nvim-dap-ui",
         dependencies = "mfussenegger/nvim-dap",
@@ -63,9 +64,10 @@ return {
         "nvim-treesitter/nvim-treesitter",
         opts = {
             ensure_installed = {
-                "lua",
-                "python",
                 "go",
+                "lua",
+                "nix",
+                "python",
             },
         },
     },
