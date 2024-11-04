@@ -1,3 +1,6 @@
+# Uncomment for profiling
+# zmodload zsh/zprof
+
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
     source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
@@ -69,7 +72,11 @@ zinit snippet OMZP::command-not-found
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf-git.sh/refs/heads/main/fzf-git.sh
 
 # Load completions
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
 
 zinit cdreplay -q
 
@@ -91,3 +98,6 @@ bindkey "^Z" Resume
 
 eval "$(fzf --zsh)"
 eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.toml)"
+
+# Uncomment for profiling
+# zprof
