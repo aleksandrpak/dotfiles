@@ -37,4 +37,7 @@ if [ "$(uname)" == "Linux" ]; then
   source ~/.dotfiles/install/google.sh
 fi
 
+# tmux plugins
+tmux run-shell ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+
 echo "Done."

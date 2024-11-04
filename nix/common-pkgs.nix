@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     # Development
     ## Nix
+    libiconv # Needed to build nil
     nixfmt-rfc-style
     ## Go
     go

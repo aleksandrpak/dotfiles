@@ -15,3 +15,7 @@ export ANDROID_SDK_ROOT=~/Library/Android/sdk
 export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:~/Library/Android/sdk/cmdline-tools/latest/bin
 export PATH=$PATH:~/.pub-cache/bin
+
+# Libraries
+export LIBRARY_PATH=$(nix path-info nixpkgs#libiconv)/lib
+export CPATH=$(nix path-info nixpkgs#libiconv)/include
