@@ -16,6 +16,11 @@ export ANDROID_HOME=~/Library/Android/sdk
 export PATH=$PATH:~/Library/Android/sdk/cmdline-tools/latest/bin
 export PATH=$PATH:~/.pub-cache/bin
 
+# Nix
+export NIX_PATH="$NIX_PATH:$HOME/.nix-defexpr/channels"
+export PATH=$PATH:~/.nix-profile/bin/
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
+
 # Libraries
 # Required for libiconv
 #export LIBRARY_PATH=$(nix path-info nixpkgs#libiconv)/lib
