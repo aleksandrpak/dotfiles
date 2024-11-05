@@ -15,6 +15,7 @@ git submodule update --remote --merge
 
 echo "Updating flake"
 nix-channel --update
+nix flake update --flake ~/.dotfiles/config/home-manager
 
 if [ "$(uname)" == "Darwin" ]; then
     darwin-rebuild switch --flake ~/.dotfiles/config/home-manager
