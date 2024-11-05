@@ -18,6 +18,7 @@ echo "Updating flake"
 if [ "$(uname)" == "Darwin" ]; then
     darwin-rebuild switch --flake ~/.dotfiles/nix
 fi
+# home-manager switch
 
 # tmux plugins
 tmux run-shell ~/.tmux/plugins/tpm/scripts/install_plugins.sh

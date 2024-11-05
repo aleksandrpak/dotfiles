@@ -19,12 +19,16 @@
   home.packages = [
     pkgs.bat
     pkgs.delta
+    pkgs.rustup
+    pkgs.nodejs_22
+    pkgs.python3
     pkgs.eza
     pkgs.fd
     pkgs.fzf
     pkgs.neovim
     pkgs.oh-my-posh
     pkgs.ripgrep
+    pkgs.neovim
   ];
 
   # Let Home Manager install and manage itself.
