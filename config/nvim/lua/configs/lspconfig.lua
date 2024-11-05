@@ -2,7 +2,6 @@
 require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require("lspconfig")
-local util = require("lspconfig/util")
 local nvlsp = require("nvchad.configs.lspconfig")
 
 lspconfig.pyright.setup({
@@ -12,6 +11,12 @@ lspconfig.pyright.setup({
 })
 
 lspconfig.nil_ls.setup({
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
+})
+
+lspconfig.bashls.setup({
     on_attach = nvlsp.on_attach,
     on_init = nvlsp.on_init,
     capabilities = nvlsp.capabilities,

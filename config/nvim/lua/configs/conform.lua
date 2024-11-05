@@ -4,6 +4,7 @@ local options = {
         python = { "black" },
         go = { "goimports", "gofumpt", "golines" },
         nix = { "nixfmt" },
+        sh = { "shfmt", "shellharden", "shellcheck" },
     },
     format_on_save = {
         -- These options will be passed to conform.format()

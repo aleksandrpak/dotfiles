@@ -7,10 +7,12 @@ exec 2> >(grep -v '^\+ echo')
 echo "Installing dotfiles"
 
 echo "Initializing submodule(s)"
-cd ~/.dotfiles
+cd ~/.dotfiles || exit
+
 git submodule update --init --recursive
 
-source ~/.dotfiles/install/link.sh
+source ./install/link.sh
+source ./install/functions.sh
 
 echo "Creating temp vim directory"
 mkdir -p ~/.tmp
@@ -21,20 +23,12 @@ mkdir -p ~/Projects/gocode
 echo "Creating ZSH cache directory"
 mkdir -p ~/.zsh/cache
 
-if [ "$(uname)" == "Darwin" ]; then
-  echo "Running on OSX"
+echo "Installing Nix"
+source ./install/nix.sh
 
-  echo "Installing Nix"
-  source ~/.dotfiles/install/nix.sh
-
-  echo "Configuring zsh as default shell"
-  chsh -s $(which zsh)
-fi
-
-if [ "$(uname)" == "Linux" ]; then
-  echo "Running on Linux"
-
-  source ~/.dotfiles/install/google.sh
+if at_google; then
+    echo "Running on gLinux"
+    source ./install/google.sh
 fi
 
 # tmux plugins

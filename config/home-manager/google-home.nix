@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -16,20 +16,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    pkgs.bat
-    pkgs.delta
-    pkgs.rustup
-    pkgs.nodejs_22
-    pkgs.python3
-    pkgs.eza
-    pkgs.fd
-    pkgs.fzf
-    pkgs.neovim
-    pkgs.oh-my-posh
-    pkgs.ripgrep
-    pkgs.neovim
-  ];
+  home.packages = (import ./common-pkgs.nix pkgs).packages;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
