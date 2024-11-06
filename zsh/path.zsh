@@ -23,5 +23,5 @@ source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
 
 # Libraries
 # Required for libiconv
-export LIBRARY_PATH=$(nix path-info nixpkgs#libiconv)/lib
-export CPATH=$(nix path-info nixpkgs#libiconv)/include
+export LIBRARY_PATH=$(nix eval nixpkgs#libiconv.outPath)/lib
+export CPATH=$(nix eval nixpkgs#libiconv.outPath)/include
