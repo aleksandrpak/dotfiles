@@ -22,6 +22,12 @@ lspconfig.bashls.setup({
     capabilities = nvlsp.capabilities,
 })
 
+lspconfig.beancount.setup({
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
+})
+
 lspconfig.gopls.setup({
     on_attach = nvlsp.on_attach,
     on_init = nvlsp.on_init,

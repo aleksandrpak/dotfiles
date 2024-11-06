@@ -18,8 +18,18 @@ You need to run :MasonInstallAll in Neovim to get all required dependencies
 
 Some of the procedures are still required automation:
 
-* System Preferences -> Keyboard -> Input Sources -> Add Russian
-* System Preferences -> Keyboard -> Shortcuts -> Input Sources: Command + Space
-* System Preferences -> Keyboard -> Shortcuts -> Mission Control: Disable F11, F12
-* System Preferences -> Keyboard -> Shortcuts -> Mission Control -> Enable shortcuts for desktops
-* Finder -> Preferences -> New Finder Window show: Downloads
+- System Preferences -> Keyboard -> Input Sources -> Add Russian
+- System Preferences -> Keyboard -> Shortcuts -> Input Sources: Command + Space
+- System Preferences -> Keyboard -> Shortcuts -> Mission Control: Disable F11, F12
+- System Preferences -> Keyboard -> Shortcuts -> Mission Control -> Enable shortcuts for desktops
+- Finder -> Preferences -> New Finder Window show: Downloads
+
+## Adding new Neovim languages
+
+- Update ./config/nvim/lua/configs/conform.lua
+  - Supported languages: https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
+- Update ./config/nvim/lua/configs/lspconfig.lua
+  - Supported languages: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+- Update nvim-treesitter in ./config/nvim/lua/plugins/init.lua
+  - Supported languages: https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
+- Check that Mason supports required binary. Otherwise install it through Nix

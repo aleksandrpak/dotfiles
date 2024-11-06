@@ -15,6 +15,8 @@
     python3
     ## Lua
     lua
+    ## Markdown
+    glow
     ## Web
     nodejs_22
     ## IDE

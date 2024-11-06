@@ -5,6 +5,8 @@ local options = {
         go = { "goimports", "gofumpt", "golines" },
         nix = { "nixfmt" },
         sh = { "shfmt", "shellharden", "shellcheck" },
+        beancount = { "bean-format" },
+        markdown = { "mdformat" },
     },
     format_on_save = {
         -- These options will be passed to conform.format()

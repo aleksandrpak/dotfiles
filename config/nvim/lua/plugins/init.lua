@@ -64,8 +64,11 @@ return {
         "nvim-treesitter/nvim-treesitter",
         opts = {
             ensure_installed = {
+                "bash",
+                "beancount",
                 "go",
                 "lua",
+                "markdown",
                 "nix",
                 "python",
             },
