@@ -20,7 +20,6 @@
     ## Web
     nodejs_22
     ## IDE
-    vim
     neovim
     ripgrep
     gnumake
@@ -30,13 +29,14 @@
     delta
     # System tools
     btop
-    e2fsprogs
-    ffmpeg
     file
     fx
     tldr
     tmux
     wget
+    ## Main machines
+    e2fsprogs
+    ffmpeg
     ## ZSH
     zsh
     fzf
