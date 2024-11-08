@@ -32,11 +32,27 @@ local plugins = {
 
 if utils.at_google() then
     table.insert(plugins, {
+        "mhinz/vim-signify",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            vim.g.signify_skip = { vcs = { allow = { "hg" } } }
+            -- Set signs to match those in gitsigns.nvim
+            vim.g.signify_sign_add = "┃"
+            vim.g.signify_sign_change = "┃"
+            vim.g.signify_sign_delete = "_"
+            vim.g.signify_sign_delete_first_line = "‾"
+            vim.g.signify_sign_change_delete = "~"
+            vim.cmd([[
+                highlight link SignifySignAdd GitSignsAdd
+                highlight link SignifySignDelete GitSignsDelete
+                highlight link SignifySignChange GitSignsChange
+            ]])
+        end,
+    })
+
+    table.insert(plugins, {
         "nvim-telescope/telescope.nvim",
-        -- Add telescope-codesearch as a dependency of telescope.nvim.
-        -- This ensures that telescope-codesearch is loaded when telescope.nvim is
-        -- loaded. So if you use the `Telescope` ex-command `codesearch` will
-        -- immediately appear as one of the available pickers.
+        -- immediately appear as one of the avaitest
         dependencies = {
             {
                 "vintharas/telescope-codesearch.nvim",
