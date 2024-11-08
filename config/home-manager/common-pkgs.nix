@@ -39,6 +39,7 @@
     ffmpeg
     ## ZSH
     zsh
+    zoxide
     fzf
     fd
     eza
