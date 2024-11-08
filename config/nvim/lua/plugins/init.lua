@@ -31,9 +31,48 @@ local plugins = {
 }
 
 if utils.at_google() then
+    -- Navigate to Google paths
+    table.insert(plugins, {
+        url = "sso://user/fentanes/googlepaths.nvim",
+        event = { "BufReadPre" },
+        cond = utils.google_path(),
+    })
+
+    -- Google snippets
+    table.insert(plugins, {
+        url = "sso://user/mccloskeybr/luasnip-google.nvim",
+        dependencies = { "L3MON4D3/LuaSnip" },
+        event = { "BufReadPre" },
+        cond = utils.google_path(),
+        config = function()
+            require("luasnip-google").load_snippets()
+        end,
+    })
+
+    -- Notify about gcert expiration
+    table.insert(plugins, {
+        url = "sso://user/fentanes/gcert.nvim",
+        dependencies = {
+            "rcarriga/nvim-notify", -- Optional
+        },
+        event = { "BufReadPre" },
+        cond = utils.google_path(),
+        opts = {
+            check_gcert_interval_ms = 10000,
+            check_gcert_unfocused_interval_ms = 60000,
+            autorun_gcert = false,
+            gcert_executable = "gcert",
+            split_size = 12,
+            show_notifications = true,
+            use_nvim_notify = true,
+        },
+    })
+
+    -- Support Mercurial status
     table.insert(plugins, {
         "mhinz/vim-signify",
         event = { "BufReadPre", "BufNewFile" },
+        cond = utils.google_path(),
         config = function()
             vim.g.signify_skip = { vcs = { allow = { "hg" } } }
             -- Set signs to match those in gitsigns.nvim
@@ -50,6 +89,7 @@ if utils.at_google() then
         end,
     })
 
+    -- Telescope using codesearch
     table.insert(plugins, {
         "nvim-telescope/telescope.nvim",
         -- immediately appear as one of the avaitest
@@ -78,7 +118,11 @@ if utils.at_google() then
                             -- telescope-codesearch because it can be reused by other telescope pickers.
                             path_display = function(opts, path)
                                 -- Do common substitutions
-                                path = path:gsub("^/google/src/cloud/[^/]+/[^/]+/google3/", "google3/", 1)
+                                path = path:gsub("^/google/src/cloud/[^/]+/[^/]+/google3/", "g3/", 1)
+                                path = path:gsub("^/google/src/head/[^/]+/google3/", "g3/", 1)
+                                path = path:gsub("^/google/src/head/[^/]+/", "depot/", 1)
+                                path = path:gsub("^/google/src/[^/]+/[^/]+/[^/]+/google3/", "g3/", 1)
+                                path = path:gsub("^/google/src/[^/]+/[^/]+/[^/]+/", "depot/", 1)
                                 path = path:gsub("^google3/video/youtube/creator/studio/", "g3/v/y/c/s/", 1)
                                 path = path:gsub("^google3/video/youtube/creator/", "g3/v/y/c/", 1)
                                 path = path:gsub("^google3/video/youtube/", "g3/v/y/", 1)

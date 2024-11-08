@@ -8,4 +8,12 @@ function M.at_google()
     return is_linux and has_gcert
 end
 
+function M.google_path()
+    -- Get the current file path
+    local filepath = vim.fn.expand("%:p")
+
+    -- Ensure the path contains '/google3/' as an exact directory (not part of another name)
+    return filepath:match("/google3/")
+end
+
 return M
