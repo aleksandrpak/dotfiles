@@ -92,6 +92,24 @@ if utils.at_google() then
             nvlsp.on_attach()
         end,
     })
+
+    lspconfigs.analysislsp = {
+        default_config = {
+            cmd = { "/google/bin/users/lerm/glint-ale/analysis_lsp/server", "--lint_on_save=false", "--max_qps=10" },
+            filetypes = { "c", "cpp", "java", "kotlin", "objc", "proto", "textproto", "go", "python", "bzl" },
+            -- root_dir = lspconfig.util.root_pattern('BUILD'),
+            root_dir = function(fname)
+                return string.match(fname, "(/google/src/cloud/[%w_-]+/[%w_-]+/).+$")
+            end,
+            settings = {},
+        },
+    }
+
+    lspconfig.analysislsp.setup({
+        on_attach = nvlsp.on_attach,
+        on_init = nvlsp.on_init,
+        capabilities = nvlsp.capabilities,
+    })
 else
     lspconfig.pyright.setup({
         on_attach = nvlsp.on_attach,
