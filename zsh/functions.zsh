@@ -1,3 +1,26 @@
+# send a notification
+function ntfy() {
+  local message="$1"
+  curl -s -d "$message" ntfy.sh/5HcsB1VfGAoc4QqVhXPMBYgKE2s97tfN
+}
+
+# run command and send a notification
+function rntfy() {
+  local message="$1"  # First argument is the message
+  shift               # Shift to access the remaining arguments as the command
+
+  # Run the command and store the exit status
+  "$@"
+  local exit_code=$?
+
+  # Send notification based on success or failure
+  if [ $exit_code -eq 0 ]; then
+    ntfy_notify "$message"
+  else
+    ntfy "Command failed with status $exit_code"
+  fi
+}
+
 # print available colors and their numbers
 function colours() {
     for i in {0..255}; do
