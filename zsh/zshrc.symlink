@@ -9,6 +9,7 @@ fi
 
 export DOTFILES=$HOME/.dotfiles
 export ZSH=$DOTFILES/zsh
+export EDITOR='nvim'
 
 [[ -e ~/.terminfo ]] && export TERMINFO_DIRS=~/.terminfo:/usr/share/terminfo
 
@@ -23,9 +24,6 @@ for config ($ZSH/**/*.zsh) source $config
 if [[ -a ~/.localrc ]]; then
     source ~/.localrc
 fi
-
-export EDITOR='nvim'
-alias vim="nvim"
 
 [ -z "$TMUX" ] && export TERM=xterm-256color
 
@@ -50,7 +48,6 @@ elif [ "$BACKGROUND" = "light" ]; then
     export THEME="base16-cupertino"
     export BAT_THEME="Colddark-Cold"
 fi
-
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
