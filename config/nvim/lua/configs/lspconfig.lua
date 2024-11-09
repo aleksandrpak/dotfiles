@@ -2,6 +2,7 @@
 require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require("lspconfig")
+local lspconfigs = require("lspconfig.configs")
 local nvlsp = require("nvchad.configs.lspconfig")
 local utils = require("configs.utils")
 
@@ -23,7 +24,75 @@ lspconfig.beancount.setup({
     capabilities = nvlsp.capabilities,
 })
 
-if not utils.at_google() then
+if utils.at_google() then
+    lspconfigs.ciderlsp = {
+        default_config = {
+            cmd = {
+                "/google/bin/releases/cider/ciderlsp/ciderlsp",
+                "--tooltag=nvim-lsp",
+                "--noforward_sync_responses",
+            },
+            -- From the table at http://go/ciderlsp
+            filetypes = {
+                "c",
+                "cpp",
+                "objc",
+                "objcpp",
+                "java",
+                "kotlin",
+                "go",
+                "python",
+                "typescript",
+                "typescriptreact",
+                "proto",
+                "textproto",
+                "dart",
+                "bzl",
+                "cs",
+                "googlesql",
+                "eml",
+                "mlir",
+                "dataz",
+                "soy",
+                "graphql",
+
+                -- CiderLSP does have some support for more filetypes that are
+                -- not listed in the table above.
+                "javascript",
+                "javascriptreact",
+                "css",
+                "scss",
+                "html",
+                "json",
+                "jslayout",
+                "gcl",
+                "borg",
+                "markdown",
+                "piccolo",
+                "ncl",
+                "conf",
+            },
+            root_dir = lspconfig.util.root_pattern(".citc"),
+            settings = {},
+        },
+    }
+
+    lspconfig.ciderlsp.setup({
+        on_init = nvlsp.on_init,
+        capabilities = nvlsp.capabilities,
+        on_attach = function(client, bufnr)
+            -- TODO(b/324369022): Diagnostics don't show up when first openinga
+            -- a file. The below is done to remedy this, a `textDocument/didChange`
+            -- call is made that gets updated diagnostics.
+            -- Remove when this bug is fixed.
+            client.request("textDocument/didChange", {
+                textDocument = { uri = vim.uri_from_bufnr(bufnr), version = 2 },
+            }, function() end)
+
+            nvlsp.on_attach()
+        end,
+    })
+else
     lspconfig.pyright.setup({
         on_attach = nvlsp.on_attach,
         on_init = nvlsp.on_init,

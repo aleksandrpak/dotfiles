@@ -10,8 +10,17 @@ local plugins = {
     },
     {
         "neovim/nvim-lspconfig",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+        },
         config = function()
             require("configs.lspconfig")
+            if utils.at_google() then
+                -- Remove current directory from backupdir
+                -- otherwise CiderLSP can get confused
+                -- and have outdated diagnostics and completions.
+                vim.cmd("set backupdir -=.")
+            end
         end,
     },
     {

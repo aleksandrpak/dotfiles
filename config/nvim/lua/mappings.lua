@@ -4,6 +4,8 @@ local map = vim.keymap.set
 local utils = require("configs.utils")
 
 map("n", "<leader><leader>", "<cmd> w <cr>", { desc = "Save file" })
+map("n", "<C-]>", "<cmd> bnext <cr>", { desc = "Next buffer" })
+map("n", "<C-p>", "<cmd> bprevious <cr>", { desc = "Previous buffer" })
 
 -- Diffview
 map("n", "<leader>gf", function()
