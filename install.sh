@@ -33,5 +33,6 @@ fi
 
 # tmux plugins
 tmux run-shell ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+rustup default stable
 
 echo "Done."
