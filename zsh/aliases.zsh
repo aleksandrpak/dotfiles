@@ -14,6 +14,8 @@ alias ls="eza --icons=always --color=always --long --git -a"
 alias tree="eza --tree --icons=always"
 alias trees="eza --tree --icons=always --level=2"
 
+alias f="fd"
+
 # search hidden
 alias rg="rg 2>/dev/null"
 alias rgh="rg --hidden"
