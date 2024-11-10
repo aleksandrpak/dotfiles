@@ -35,7 +35,7 @@ if utils.at_google() then
     options.formatters_by_ft.html = { "prettier" }
     options.formatters_by_ft.json = { "prettier" }
     options.formatters_by_ft.dart = { "tidy_dart", "dartfmt" }
-    options.formatters_by_ft.go = { "gofmt" }
+    options.formatters_by_ft.go = { "goimports", "gofmt" }
     options.formatters_by_ft.java = { "google-java-format" }
     options.formatters_by_ft.jslayout = { "jslfmt" }
     options.formatters_by_ft.markdown = { "mdformat" }

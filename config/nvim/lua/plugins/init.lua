@@ -1,5 +1,15 @@
 local utils = require("configs.utils")
 
+local function goog(plugin, config)
+    return {
+        name = plugin,
+        event = "VeryLazy",
+        dir = "/usr/share/vim/google/" .. plugin,
+        dependencies = { "maktaba" },
+        config = config,
+    }
+end
+
 local plugins = {
     { "nvim-neotest/nvim-nio" },
     { "sindrets/diffview.nvim" },
@@ -41,6 +51,18 @@ local plugins = {
 }
 
 if utils.at_google() then
+    -- Base plugin
+    table.insert(plugins, {
+        name = "maktaba",
+        dir = "/usr/share/vim/google/maktaba",
+        init = function()
+            vim.cmd("source /usr/share/vim/google/glug/bootstrap.vim")
+        end,
+    })
+
+    -- Filetypes
+    table.insert(plugins, goog("google-filetypes"))
+
     -- Navigate to Google paths
     table.insert(plugins, {
         url = "sso://user/fentanes/googlepaths.nvim",
