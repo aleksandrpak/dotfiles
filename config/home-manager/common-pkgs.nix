@@ -5,21 +5,36 @@
   packages = with pkgs; [
     # Development
     ## Nix
-    libiconv # Needed to build nil
+    nil
     nixfmt-rfc-style
     ## Lua
     lua
+    lua-language-server
+    stylua
+    # Bash
+    shellcheck
+    shellharden
+    shfmt
     ## Go
     go
+    delve
+    gotools
+    gopls
+    gofumpt
+    golines
     ## Web
     nodejs_22
     ## Rust
     rustup
     ## Python
     python3
+    black
+    pyright
     ## Beancount
     beancount-language-server
     ## Markdown
+    mdformat
+    markdownlint-cli
     glow
     ## Version control
     gh

@@ -171,8 +171,6 @@ else
     table.insert(plugins, { "mfussenegger/nvim-dap" })
     table.insert(plugins, { "jay-babu/mason-nvim-dap.nvim" })
 
-    table.insert(plugins, { "jay-babu/mason-nvim-dap.nvim" })
-
     table.insert(plugins, {
         "rcarriga/nvim-dap-ui",
         dependencies = {

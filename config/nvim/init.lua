@@ -18,7 +18,6 @@ vim.filetype.add({
 })
 
 local lazy_config = require("configs.lazy")
-local utils = require("configs.utils")
 
 -- load plugins
 require("lazy").setup({
@@ -30,15 +29,6 @@ require("lazy").setup({
     },
     { import = "plugins" },
 }, lazy_config)
-
--- load Mason
-require("mason").setup()
-
-if not utils.at_google() then
-    require("mason-nvim-dap").setup({
-        ensure_installed = { "python", "delve" },
-    })
-end
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")

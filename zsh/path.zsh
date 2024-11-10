@@ -20,8 +20,3 @@ export PATH=$PATH:~/.pub-cache/bin
 export NIX_PATH="$NIX_PATH:$HOME/.nix-defexpr/channels"
 export PATH=$PATH:~/.nix-profile/bin/
 source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
-
-# Libraries
-# Required for libiconv
-export LIBRARY_PATH=$(nix eval nixpkgs#libiconv.outPath)/lib
-export CPATH=$(nix eval nixpkgs#libiconv.outPath)/include

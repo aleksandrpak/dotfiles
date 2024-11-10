@@ -15,9 +15,10 @@ alias tree="eza --tree --icons=always"
 alias trees="eza --tree --icons=always --level=2"
 
 # search hidden
+alias rg="rg 2>/dev/null"
 alias rgh="rg --hidden"
 alias ag="rg"
-alias agh="rg --hidden"
+alias agh="rgh"
 
 # Helpers
 alias xx="exit"
