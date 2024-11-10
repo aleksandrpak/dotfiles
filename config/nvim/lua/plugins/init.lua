@@ -34,6 +34,7 @@ local plugins = {
                 "markdown",
                 "nix",
                 "python",
+                "rust",
             },
         },
     },
@@ -170,9 +171,13 @@ else
     table.insert(plugins, { "mfussenegger/nvim-dap" })
     table.insert(plugins, { "jay-babu/mason-nvim-dap.nvim" })
 
+    table.insert(plugins, { "jay-babu/mason-nvim-dap.nvim" })
+
     table.insert(plugins, {
         "rcarriga/nvim-dap-ui",
-        dependencies = "mfussenegger/nvim-dap",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+        },
         config = function()
             local dap = require("dap")
             local dapui = require("dapui")

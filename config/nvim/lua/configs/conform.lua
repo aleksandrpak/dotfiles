@@ -131,6 +131,7 @@ if utils.at_google() then
 else
     options.formatters_by_ft.go = { "goimports", "gofumpt", "golines" }
     options.formatters_by_ft.python = { "black" }
+    options.formatters_by_ft.rust = { "rustfmt" }
 end
 
 return options
