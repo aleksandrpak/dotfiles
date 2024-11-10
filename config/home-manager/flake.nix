@@ -26,6 +26,7 @@
       darwinConfigurations."personal-laptop" = nix-darwin.lib.darwinSystem {
         modules = [
           # Darwin
+          ./darwin-aarch64.nix
           (import ./darwin-conf.nix inputs)
           (import ./darwin-gui.nix inputs)
           home-manager.darwinModules.home-manager
@@ -39,6 +40,11 @@
         ];
       };
 
+      homeConfigurations."alp@home-pc" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        modules = [ (import ./linux-home.nix nixpkgs.legacyPackages.x86_64-linux) ];
+      };
+
       homeConfigurations."alp@raspberrypi" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-linux;
         modules = [ (import ./pi-home.nix nixpkgs.legacyPackages.aarch64-linux) ];
@@ -47,6 +53,22 @@
       darwinConfigurations."corp-laptop" = nix-darwin.lib.darwinSystem {
         modules = [
           # Darwin
+          ./darwin-aarch64.nix
+          (import ./darwin-conf.nix inputs)
+          (import ./darwin-gui.nix inputs)
+          home-manager.darwinModules.home-manager
+          ./darwin-home.nix
+          nix-homebrew.darwinModules.nix-homebrew
+          ./homebrew.nix
+          # Corp
+          (import ./corp-dock.nix inputs)
+        ];
+      };
+
+      darwinConfigurations."corp-dekstop" = nix-darwin.lib.darwinSystem {
+        modules = [
+          # Darwin
+          ./darwin-x86_64.nix
           (import ./darwin-conf.nix inputs)
           (import ./darwin-gui.nix inputs)
           home-manager.darwinModules.home-manager
