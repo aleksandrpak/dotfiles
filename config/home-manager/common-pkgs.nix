@@ -17,6 +17,8 @@
     rustup
     ## Python
     python3
+    ## Beancount
+    beancount-language-server
     ## Markdown
     glow
     ## Version control
@@ -36,6 +38,7 @@
     wget
     e2fsprogs
     ffmpeg
+    mosh
     ## ZSH
     zsh
     zoxide
