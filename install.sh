@@ -24,7 +24,7 @@ if at_google; then
 fi
 
 # Make ZSH default shell
-sudo which zsh | sudo tee -a /etc/shells
+which zsh | sudo tee -a /etc/shells
 chsh -s "$(which zsh)"
 
 # tmux plugins
