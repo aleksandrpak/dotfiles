@@ -12,8 +12,8 @@ cd ~/.dotfiles || exit
 git submodule update --init --recursive
 
 source ./install/functions.sh
-source ./install/link.sh
 source ./install/dir.sh
+source ./install/link.sh
 
 echo "Installing Nix"
 source ./install/nix.sh
