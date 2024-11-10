@@ -39,6 +39,11 @@
         ];
       };
 
+      homeConfigurations."alp@raspberrypi" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-linux;
+        modules = [ (import ./pi-home.nix nixpkgs.legacyPackages.aarch64-linux) ];
+      };
+
       darwinConfigurations."corp-laptop" = nix-darwin.lib.darwinSystem {
         modules = [
           # Darwin
@@ -55,12 +60,7 @@
 
       homeConfigurations."alekspak@towelie.c.googlers.com" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
         modules = [ (import ./google-home.nix nixpkgs.legacyPackages.x86_64-linux) ];
-
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to google-home.nix
       };
     };
 }

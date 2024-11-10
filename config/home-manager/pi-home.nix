@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
-  home.username = "alekspak";
-  home.homeDirectory = "/usr/local/google/home/alekspak";
+  home.username = "alp";
+  home.homeDirectory = "/home/alp";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -14,7 +14,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = (import ./common-pkgs.nix pkgs).packages;
+  home.packages = (import ./common-pkgs.nix pkgs).minimalPackages;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
