@@ -79,6 +79,14 @@ compinit -C
 
 zinit cdreplay -q
 
+# Check if we're in tmux
+if [[ -n $TMUX ]]; then
+    zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+    zstyle ':fzf-tab:*' popup-min-size 100 40 # Width: 100 chars, Height: 40 lines
+    zstyle ':fzf-tab:*' popup-pad 20 00
+    zstyle ':fzf-tab:*' popup-pos bottom
+fi
+
 # Runs before each prompt rendering
 function precmd() {
     export BG_JOBS=$(jobs|wc -l|xargs)

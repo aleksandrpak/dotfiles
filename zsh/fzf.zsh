@@ -10,6 +10,7 @@ export FZF_ALT_C_OPTS="--preview 'eza --icons=always --color=always --long --no-
 
 # completion preview
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons=always --color=always --long --no-user --no-time --no-permissions --no-filesize $realpath'
+zstyle ':fzf-tab:complete:vim:*' fzf-preview 'if [ -d $realpath ]; then eza --icons=always --color=always --long --no-user --no-time --no-permissions --no-filesize $realpath; else bat -n --color=always --line-range :500 $realpath; fi'
 
 # Advanced customization of fzf options via _fzf_comprun function
 # - The first argument to the function is the name of the command.
