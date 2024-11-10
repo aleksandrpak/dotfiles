@@ -59,11 +59,11 @@ function extract() {
 # set the background color to light
 function light() {
     export BACKGROUND="light" && reload
-    if [ "$(uname)" == "Darwin" ]; then
+    if [[ "$(uname)" == "Darwin" ]]; then
         for addr in $(fd "nvim[0-9\.]+$" /var/folders); do
             nvim --server $addr --remote-send ':lua require("nvchad.utils").reload() <cr>'
         done
-    elif [ "$(uname)" == "Linux" ]; then
+    elif [[ "$(uname)" == "Linux" ]]; then
         for addr in $XDG_RUNTIME_DIR/nvim.*; do
             nvim --server $addr --remote-send ':lua require("nvchad.utils").reload() <cr>'
         done
@@ -72,11 +72,11 @@ function light() {
 
 function dark() {
     export BACKGROUND="dark" && reload
-    if [ "$(uname)" == "Darwin" ]; then
+    if [[ "$(uname)" == "Darwin" ]]; then
         for addr in $(fd "nvim[0-9\.]+$" /var/folders); do
             nvim --server $addr --remote-send ':lua require("nvchad.utils").reload() <cr>'
         done
-    elif [ "$(uname)" == "Linux" ]; then
+    elif [[ "$(uname)" == "Linux" ]]; then
         for addr in $XDG_RUNTIME_DIR/nvim.*; do
             nvim --server $addr --remote-send ':lua require("nvchad.utils").reload() <cr>'
         done
