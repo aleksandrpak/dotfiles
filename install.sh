@@ -11,17 +11,9 @@ cd ~/.dotfiles || exit
 
 git submodule update --init --recursive
 
-source ./install/link.sh
 source ./install/functions.sh
-
-echo "Creating temp vim directory"
-mkdir -p ~/.tmp
-
-echo "Creating Go projects directory"
-mkdir -p ~/Projects/gocode
-
-echo "Creating ZSH cache directory"
-mkdir -p ~/.zsh/cache
+source ./install/link.sh
+source ./install/dir.sh
 
 echo "Installing Nix"
 source ./install/nix.sh
@@ -31,8 +23,13 @@ if at_google; then
     source ./install/google.sh
 fi
 
+# Make ZSH default shell
+sudo which zsh | sudo tee -a /etc/shells
+chsh -s "$(which zsh)"
+
 # tmux plugins
 tmux run-shell ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+
 rustup default stable
 
 echo "Done."

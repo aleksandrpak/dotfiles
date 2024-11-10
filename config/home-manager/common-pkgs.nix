@@ -1,12 +1,20 @@
 { pkgs, ... }:
-let
-  minimalPackages = with pkgs; [
+{
+  # List packages installed in system profile. To search by name, run:
+  # $ nix-env -qaP | grep wget
+  packages = with pkgs; [
     # Development
     ## Nix
     libiconv # Needed to build nil
     nixfmt-rfc-style
     ## Lua
     lua
+    ## Go
+    go
+    ## Web
+    nodejs_22
+    ## Rust
+    rustup
     ## Python
     python3
     ## Markdown
@@ -26,6 +34,8 @@ let
     tldr
     tmux
     wget
+    e2fsprogs
+    ffmpeg
     ## ZSH
     zsh
     zoxide
@@ -35,25 +45,4 @@ let
     bat
     oh-my-posh
   ];
-in
-{
-  minimalPackages = minimalPackages;
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
-  packages =
-    with pkgs;
-    [
-      # Development
-      ## Go
-      go
-      ## Rust
-      rustup
-      ## Web
-      nodejs_22
-      # System tools
-      ## Main machines
-      e2fsprogs
-      ffmpeg
-    ]
-    ++ minimalPackages;
 }
