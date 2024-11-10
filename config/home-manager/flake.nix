@@ -47,7 +47,7 @@
 
       homeConfigurations."alp@raspberrypi" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-linux;
-        modules = [ (import ./pi-home.nix nixpkgs.legacyPackages.aarch64-linux) ];
+        modules = [ (import ./linux-home.nix nixpkgs.legacyPackages.aarch64-linux) ];
       };
 
       darwinConfigurations."corp-laptop" = nix-darwin.lib.darwinSystem {

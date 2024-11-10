@@ -63,6 +63,10 @@ function light() {
         for addr in $(fd "nvim[0-9\.]+$" /var/folders); do
             nvim --server $addr --remote-send ':lua require("nvchad.utils").reload() <cr>'
         done
+    elif [ "$(uname)" == "Linux" ]; then
+        for addr in $XDG_RUNTIME_DIR/nvim.*; do
+            nvim --server $addr --remote-send ':lua require("nvchad.utils").reload() <cr>'
+        done
     fi
 }
 
@@ -70,6 +74,10 @@ function dark() {
     export BACKGROUND="dark" && reload
     if [ "$(uname)" == "Darwin" ]; then
         for addr in $(fd "nvim[0-9\.]+$" /var/folders); do
+            nvim --server $addr --remote-send ':lua require("nvchad.utils").reload() <cr>'
+        done
+    elif [ "$(uname)" == "Linux" ]; then
+        for addr in $XDG_RUNTIME_DIR/nvim.*; do
             nvim --server $addr --remote-send ':lua require("nvchad.utils").reload() <cr>'
         done
     fi
