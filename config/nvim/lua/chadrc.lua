@@ -2,10 +2,13 @@
 -- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 -- Please read that file to know all available options :(
 
+local env_theme = os.getenv("NVIM_THEME")
+local theme = env_theme or "chadracula"
+
 ---@type ChadrcConfig
 local M = {
     base46 = {
-        theme = "chadracula",
+        theme = theme,
     },
     mason = {
         pkgs = {

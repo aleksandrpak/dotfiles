@@ -59,10 +59,20 @@ function extract() {
 # set the background color to light
 function light() {
     export BACKGROUND="light" && reload
+    if [ "$(uname)" == "Darwin" ]; then
+        for addr in $(fd "nvim[0-9\.]+$" /var/folders); do
+            nvim --server $addr --remote-send ':lua require("nvchad.utils").reload() <cr>'
+        done
+    fi
 }
 
 function dark() {
     export BACKGROUND="dark" && reload
+    if [ "$(uname)" == "Darwin" ]; then
+        for addr in $(fd "nvim[0-9\.]+$" /var/folders); do
+            nvim --server $addr --remote-send ':lua require("nvchad.utils").reload() <cr>'
+        done
+    fi
 }
 
 # This function emits an OSC 1337 sequence to set a user var

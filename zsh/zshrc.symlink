@@ -42,11 +42,13 @@ if [ "$BACKGROUND" = "dark" ]; then
     base16_dracula
     export THEME="base16-dracula"
     export BAT_THEME="Dracula"
+    export NVIM_THEME="chadracula"
 elif [ "$BACKGROUND" = "light" ]; then
     wezterm_set_user_var "theme" "light"
     base16_cupertino
     export THEME="base16-cupertino"
     export BAT_THEME="Colddark-Cold"
+    export NVIM_THEME="github_light"
 fi
 
 # Set the directory we want to store zinit and plugins
