@@ -11,6 +11,12 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+vim.filetype.add({
+    extension = {
+        bean = "beancount",
+    },
+})
+
 local lazy_config = require("configs.lazy")
 local utils = require("configs.utils")
 
