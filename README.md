@@ -5,7 +5,7 @@
 Clone the dotfiles repository to your computer.
 
 ```bash
-git clone git@github.com:aleksandrpak/dotfiles.git ~/.dotfiles
+git clone https://github.com/aleksandrpak/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 sh install.sh
 ```
