@@ -23,6 +23,7 @@ Some of the procedures are still required automation:
 - System Preferences -> Keyboard -> Shortcuts -> Mission Control: Disable F11, F12
 - System Preferences -> Keyboard -> Shortcuts -> Mission Control -> Enable shortcuts for desktops
 - Finder -> Preferences -> New Finder Window show: Downloads
+- TickTick -> Disable Cmd+Shift+P shortcut
 
 ## Adding new Neovim languages
 

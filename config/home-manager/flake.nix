@@ -65,7 +65,7 @@
         ];
       };
 
-      darwinConfigurations."corp-dekstop" = nix-darwin.lib.darwinSystem {
+      darwinConfigurations."corp-desktop" = nix-darwin.lib.darwinSystem {
         modules = [
           # Darwin
           ./darwin-x86_64.nix
