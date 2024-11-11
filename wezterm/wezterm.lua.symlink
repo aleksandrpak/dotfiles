@@ -1,10 +1,15 @@
-local wezterm = require 'wezterm'
+local wezterm = require("wezterm")
 
 -- This event fires when user vars are changed.
-wezterm.on('user-var-changed', function(window, pane, name, value)
-    local overrides = {}
+wezterm.on("user-var-changed", function(window, _, name, value)
+    local overrides = window:get_config_overrides()
     if name == "theme" and value == "light" then
         overrides.color_scheme = "Cupertino (base16)"
+    elseif name == "font_size" then
+        local size = tonumber(value)
+        if size then
+            overrides.font_size = size
+        end
     end
     window:set_config_overrides(overrides)
 end)
@@ -17,11 +22,11 @@ return {
     show_tab_index_in_tab_bar = false,
 
     -- Set the font settings
-    font_size = 13.0,
-    font = wezterm.font 'Hack',
+    font_size = 15.0,
+    font = wezterm.font("Hack"),
 
     -- Cursor Style
     default_cursor_style = "SteadyBlock",
 
-    color_scheme = "Dracula (Official)"
+    color_scheme = "Dracula (Official)",
 }

@@ -11,12 +11,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.filetype.add({
-    extension = {
-        bean = "beancount",
-    },
-})
-
 local lazy_config = require("configs.lazy")
 
 -- load plugins
@@ -36,6 +30,7 @@ dofile(vim.g.base46_cache .. "statusline")
 
 require("options")
 require("nvchad.autocmds")
+require("vimopts")
 
 vim.schedule(function()
     require("mappings")

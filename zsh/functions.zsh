@@ -100,4 +100,16 @@ wezterm_set_user_var() {
   fi
 }
 
+function font_size() {
+    wezterm_set_user_var "font_size" "$1"
+}
+
+function font_default() {
+    font_size "15"
+}
+
+function font_large() {
+    font_size "20"
+}
+
 fpath=($ZSH/functions $fpath)
