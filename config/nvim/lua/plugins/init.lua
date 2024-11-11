@@ -34,6 +34,18 @@ local plugins = {
         end,
     },
     {
+        "nvim-telescope/telescope.nvim",
+        opts = function(_, opts)
+            opts.pickers = {
+                buffers = {
+                    ignore_current_buffer = true,
+                    sort_mru = true,
+                },
+            }
+            return opts
+        end,
+    },
+    {
         "nvim-treesitter/nvim-treesitter",
         opts = {
             ensure_installed = {

@@ -1,11 +1,15 @@
 require("nvchad.mappings")
 
 local map = vim.keymap.set
+local nomap = vim.keymap.del
 local utils = require("configs.utils")
 
 map("n", "<leader><leader>", "<cmd> w <cr>", { desc = "Save file" })
 map("n", "<C-]>", "<cmd> bnext <cr>", { desc = "Next buffer" })
 map("n", "<C-p>", "<cmd> bprevious <cr>", { desc = "Previous buffer" })
+
+map("n", "<leader>fe", "<cmd> Telescope buffers <cr>", { desc = "telescope find buffers" })
+nomap("n", "<leader>fb")
 
 -- Diffview
 map("n", "<leader>gf", function()
