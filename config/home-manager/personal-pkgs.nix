@@ -16,6 +16,9 @@
     # GUI
     google-chrome
     # Accounting
-    fava
+    beancount
+    # TODO: fava (need 1.29 for dark)
+    # TODO: remove after fava is available
+    pipx
   ];
 }

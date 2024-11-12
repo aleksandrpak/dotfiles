@@ -2,6 +2,7 @@
 export PATH=$PATH:$DOTFILES/bin
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:$HOME/.local/bin
 
 # Golang variables
 export GOPATH=$HOME/Projects/gocode

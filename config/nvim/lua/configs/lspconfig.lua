@@ -22,6 +22,14 @@ lspconfig.beancount.setup({
     on_attach = nvlsp.on_attach,
     on_init = nvlsp.on_init,
     capabilities = nvlsp.capabilities,
+    cmd = {
+        "beancount-language-server",
+        "--stdio",
+    },
+    init_options = {
+        journalFile = "~/Projects/ledger/personal.bean",
+        pythonPath = "~/Projects/ledger/venv/bin/python3",
+    },
 })
 
 if utils.at_google() then
