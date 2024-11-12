@@ -15,7 +15,5 @@
     flutter
     # GUI
     google-chrome
-    # Accounting
-    beancount
   ];
 }
