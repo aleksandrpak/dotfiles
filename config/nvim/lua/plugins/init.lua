@@ -36,6 +36,11 @@ local plugins = {
     {
         "nvim-telescope/telescope.nvim",
         opts = function(_, opts)
+            -- Close from insert mode
+            opts.defaults.mappings.i = {
+                ["<esc>"] = "close",
+            }
+
             opts.pickers = {
                 buffers = {
                     ignore_current_buffer = true,

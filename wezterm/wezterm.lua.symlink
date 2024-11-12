@@ -25,6 +25,17 @@ return {
     font_size = 15.0,
     font = wezterm.font("Hack"),
 
+    keys = {
+        {
+            key = "p",
+            mods = "SUPER",
+            action = wezterm.action.SendKey({
+                key = "p",
+                mods = "ALT",
+            }),
+        },
+    },
+
     -- Cursor Style
     default_cursor_style = "SteadyBlock",
 
