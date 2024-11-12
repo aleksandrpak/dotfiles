@@ -41,6 +41,9 @@ local plugins = {
                 ["<esc>"] = "close",
             }
 
+            -- Ignore python virtual env
+            opts.defaults.file_ignore_patterns = { "venv" }
+
             opts.pickers = {
                 buffers = {
                     ignore_current_buffer = true,

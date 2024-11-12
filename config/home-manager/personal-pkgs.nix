@@ -15,5 +15,7 @@
     flutter
     # GUI
     google-chrome
+    # Accounting
+    fava
   ];
 }
