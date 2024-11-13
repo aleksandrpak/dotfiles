@@ -34,6 +34,7 @@ local M = {
             "mdformat",
             "markdownlint-cli",
             "rust-analyzer",
+            "yamlfmt",
         },
     },
 }

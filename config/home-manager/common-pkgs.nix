@@ -36,6 +36,8 @@
     mdformat
     markdownlint-cli
     glow
+    ## YAML
+    yamlfmt
     ## Version control
     gh
     delta

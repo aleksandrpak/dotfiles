@@ -33,4 +33,4 @@ Some of the procedures are still required automation:
   - Supported languages: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
 - Update nvim-treesitter in ./config/nvim/lua/plugins/init.lua
   - Supported languages: https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages
-- Add required binary to Nix. If it's not supported then add to chadrc.lua.
+- Add required binary to Nix and skip in chadrc.lua. If it's not supported then add to chadrc.lua.

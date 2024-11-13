@@ -65,6 +65,7 @@ local plugins = {
                 "nix",
                 "python",
                 "rust",
+                "yaml",
             },
         },
     },
