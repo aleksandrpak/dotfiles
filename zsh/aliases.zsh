@@ -17,7 +17,7 @@ alias trees="eza --tree --icons=always --level=2"
 alias f="fd"
 
 # search hidden
-alias rg="rg 2>/dev/null"
+alias rg="rg --smart-case 2>/dev/null"
 alias rgh="rg --hidden"
 alias ag="rg"
 alias agh="rgh"
