@@ -14,6 +14,7 @@
     ## Flutter
     flutter
     # GUI
+    discord
     google-chrome
     # Accounting
     # TODO: fava (need 1.29 for dark)

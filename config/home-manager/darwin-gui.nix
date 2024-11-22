@@ -5,7 +5,6 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     # TODO: firefox
-    discord
     obsidian
     protonmail-bridge
     vscode
