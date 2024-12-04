@@ -25,6 +25,7 @@
       "mas"
     ];
     casks = [
+      "plex"
       "proton-pass"
       "protonvpn"
       "steam"
