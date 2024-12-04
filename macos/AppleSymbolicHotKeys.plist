@@ -1,0 +1,203 @@
+{
+    118 =     {
+        enabled = 1;
+        value =         {
+            parameters =             (
+                49,
+                18,
+                1048576
+            );
+            type = standard;
+        };
+    };
+    119 =     {
+        enabled = 1;
+        value =         {
+            parameters =             (
+                50,
+                19,
+                1048576
+            );
+            type = standard;
+        };
+    };
+    120 =     {
+        enabled = 1;
+        value =         {
+            parameters =             (
+                51,
+                20,
+                1048576
+            );
+            type = standard;
+        };
+    };
+    121 =     {
+        enabled = 1;
+        value =         {
+            parameters =             (
+                52,
+                21,
+                1048576
+            );
+            type = standard;
+        };
+    };
+    122 =     {
+        enabled = 1;
+        value =         {
+            parameters =             (
+                53,
+                23,
+                1048576
+            );
+            type = standard;
+        };
+    };
+    15 =     {
+        enabled = 0;
+    };
+    16 =     {
+        enabled = 0;
+    };
+    164 =     {
+        enabled = 0;
+        value =         {
+            parameters =             (
+                65535,
+                65535,
+                0
+            );
+            type = standard;
+        };
+    };
+    17 =     {
+        enabled = 0;
+    };
+    18 =     {
+        enabled = 0;
+    };
+    19 =     {
+        enabled = 0;
+    };
+    20 =     {
+        enabled = 0;
+    };
+    21 =     {
+        enabled = 0;
+    };
+    22 =     {
+        enabled = 0;
+    };
+    23 =     {
+        enabled = 0;
+    };
+    24 =     {
+        enabled = 0;
+    };
+    25 =     {
+        enabled = 0;
+    };
+    26 =     {
+        enabled = 0;
+    };
+    36 =     {
+        enabled = 0;
+        value =         {
+            parameters =             (
+                65535,
+                103,
+                8388608
+            );
+            type = standard;
+        };
+    };
+    60 =     {
+        enabled = 1;
+        value =         {
+            parameters =             (
+                32,
+                49,
+                1048576
+            );
+            type = standard;
+        };
+    };
+    61 =     {
+        enabled = 0;
+        value =         {
+            parameters =             (
+                32,
+                49,
+                786432
+            );
+            type = standard;
+        };
+    };
+    64 =     {
+        enabled = 0;
+        value =         {
+            parameters =             (
+                32,
+                49,
+                1048576
+            );
+            type = standard;
+        };
+    };
+    65 =     {
+        enabled = 0;
+        value =         {
+            parameters =             (
+                32,
+                49,
+                1572864
+            );
+            type = standard;
+        };
+    };
+    79 =     {
+        enabled = 1;
+        value =         {
+            parameters =             (
+                65535,
+                123,
+                8650752
+            );
+            type = standard;
+        };
+    };
+    80 =     {
+        enabled = 1;
+        value =         {
+            parameters =             (
+                65535,
+                123,
+                8781824
+            );
+            type = standard;
+        };
+    };
+    81 =     {
+        enabled = 1;
+        value =         {
+            parameters =             (
+                65535,
+                124,
+                8650752
+            );
+            type = standard;
+        };
+    };
+    82 =     {
+        enabled = 1;
+        value =         {
+            parameters =             (
+                65535,
+                124,
+                8781824
+            );
+            type = standard;
+        };
+    };
+}

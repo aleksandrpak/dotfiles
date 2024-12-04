@@ -23,6 +23,10 @@ if at_google; then
     source ./install/google.sh
 fi
 
+if [[ "$(uname)" == "Darwin" ]]; then
+    source ./install/macos.sh
+fi
+
 # Make ZSH default shell
 which zsh | sudo tee -a /etc/shells
 chsh -s "$(which zsh)"
