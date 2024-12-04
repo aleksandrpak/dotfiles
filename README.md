@@ -18,7 +18,6 @@ You need to run :MasonInstallAll in Neovim to get all required dependencies
 
 Some of the procedures are still required automation:
 
-- Finder -> Preferences -> New Finder Window show: Downloads
 - TickTick -> Disable Cmd+Shift+P shortcut
 
 ## Adding new Neovim languages
